@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 
-<title>Watch Full HD Video</title>
+<title>Video Siap Ditonton</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -14,153 +14,250 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.mi
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 }
 
 body{
     min-height:100vh;
-    background:#fff
+    background:#050505;
+    color:#fff;
 }
 
-/* ================= LANDING ================= */
+/* =========================================================
+   LANDING - BLACK & RED
+   ========================================================= */
 
 #page-landing{
     width:100%;
     max-width:480px;
     margin:auto;
-    padding:16px
+    padding:18px 14px 35px;
 }
 
-.card{
-    background:#fff;
-    border:1px solid #eee;
-    border-radius:28px;
-    padding:32px 20px 26px;
-    text-align:center;
-    box-shadow:0 8px 30px rgba(0,0,0,.08)
+.landing-card{
+    overflow:hidden;
+    background:#0b0b0b;
+    border:1px solid #2a0909;
+    border-radius:26px;
+    box-shadow:0 10px 35px rgba(0,0,0,.55);
 }
 
-.play-icon-wrapper{
-    width:88px;
-    height:88px;
-    margin:0 auto 15px;
+/* PREVIEW */
+
+.preview{
+    position:relative;
+    height:260px;
+    overflow:hidden;
+    background:
+        radial-gradient(
+            circle at center,
+            #3a0808 0,
+            #150303 42%,
+            #030303 100%
+        );
+}
+
+.preview::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.08),
+            rgba(0,0,0,.65)
+        );
+}
+
+.preview-content{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    z-index:2;
+}
+
+.preview-play{
+    width:76px;
+    height:76px;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#1e293b;
-    cursor:pointer;
-    animation:pulse 1.7s infinite
-}
-
-.play-icon-wrapper i{
+    background:#e50914;
     color:#fff;
-    font-size:48px;
-    margin-left:5px
+    font-size:31px;
+    padding-left:4px;
+    box-shadow:
+        0 8px 30px rgba(229,9,20,.45);
+    cursor:pointer;
+    transition:.2s;
 }
 
-@keyframes pulse{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.07)}
+.preview-play:active{
+    transform:scale(.94);
 }
 
-h1{
+.preview-label{
+    margin-top:14px;
+    color:#fff;
+    font-size:12px;
+    font-weight:600;
+    background:rgba(0,0,0,.65);
+    padding:6px 12px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(5px);
+}
+
+.preview-quality{
+    position:absolute;
+    top:13px;
+    left:13px;
+    z-index:3;
+    color:#fff;
+    background:#160303;
+    border:1px solid #5c0b0b;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.preview-quality i{
+    color:#ff1a25;
+}
+
+.preview-count{
+    position:absolute;
+    top:13px;
+    right:13px;
+    z-index:3;
+    color:#fff;
+    background:#160303;
+    border:1px solid #5c0b0b;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* CONTENT */
+
+.landing-content{
+    padding:22px 19px 20px;
+}
+
+.title{
+    text-align:center;
+    color:#fff;
     font-size:28px;
-    color:#0b0d10;
-    margin-bottom:16px
+    line-height:1.2;
+    font-weight:800;
+    margin-bottom:9px;
 }
 
-.quality-box{
+.subtitle{
+    text-align:center;
+    color:#a3a3a3;
+    font-size:14px;
+    line-height:1.5;
+    margin-bottom:17px;
+}
+
+.info-row{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:18px;
+}
+
+.info-pill{
     display:flex;
     align-items:center;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:7px;
-    padding:11px 13px;
-    margin-bottom:15px;
-    border-radius:30px;
-    background:#f5f7fa;
-    border:1px solid #e5e7eb;
-    color:#1e293b;
-    font-size:14px
+    gap:6px;
+    padding:7px 11px;
+    background:#151515;
+    color:#d4d4d4;
+    border:1px solid #292929;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:600;
 }
 
-.quality-box i{
-    color:#2563eb
+.info-pill i{
+    color:#e50914;
 }
 
-.quality-box .check{
-    color:#16a34a
-}
-
-.quality-box strong{
-    background:#e5e7eb;
-    padding:2px 8px;
-    border-radius:20px
-}
-
-.desc{
-    color:#475569;
-    font-size:15px;
-    margin-bottom:18px;
-    line-height:1.5
-}
-
-.btn-primary{
+.watch-button{
     width:100%;
-    padding:17px;
     border:0;
-    border-radius:50px;
-    background:#1e293b;
+    border-radius:15px;
+    padding:16px 18px;
+    background:#e50914;
     color:#fff;
-    font-size:18px;
-    font-weight:700;
-    cursor:pointer
+    font-size:17px;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:
+        0 6px 22px rgba(229,9,20,.32);
 }
 
-.btn-primary:active{
-    transform:scale(.97)
+.watch-button:active{
+    transform:scale(.98);
 }
 
-.cta-note{
+.watch-button i{
+    margin-left:7px;
+}
+
+.tap-note{
+    text-align:center;
+    color:#737373;
+    font-size:11px;
     margin-top:9px;
-    color:#64748b;
-    font-size:12px
 }
 
-.footer-badges{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    flex-wrap:wrap;
-    margin-top:22px;
+.feature-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:7px;
+    margin-top:19px;
     padding-top:17px;
-    border-top:1px solid #eee
+    border-top:1px solid #242424;
 }
 
-.footer-item{
-    color:#334155;
-    font-size:13px
+.feature{
+    text-align:center;
+    color:#8a8a8a;
+    font-size:10px;
 }
 
-.footer-item i{
-    color:#2563eb;
-    margin-right:5px
+.feature i{
+    display:block;
+    margin-bottom:5px;
+    color:#e50914;
+    font-size:16px;
 }
 
-/* ================= PLAYER ================= */
+
+/* =========================================================
+   PLAYER
+   ========================================================= */
 
 #page-player{
     display:none;
     width:100%;
     min-height:100vh;
-    background:#0b0d10
+    background:#080b10;
 }
 
 .player-card{
     width:100%;
-    background:#0b0d10;
-    padding-bottom:24px
+    background:#080b10;
+    padding-bottom:25px;
 }
 
 .player-header{
@@ -168,36 +265,32 @@ h1{
     align-items:center;
     justify-content:space-between;
     gap:6px;
-    padding:11px 13px;
-    border-bottom:1px solid #1e293b
+    padding:12px;
+    border-bottom:1px solid #1e293b;
 }
 
 .brand{
-    color:#94a3b8;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:1px
+    color:#cbd5e1;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1px;
 }
 
-.badge-4k{
-    background:#f59e0b;
-    color:#111827;
-    padding:4px 10px;
-    border-radius:20px;
+.badge-hd{
+    background:#2563eb;
+    color:#fff;
     font-size:10px;
-    font-weight:800
+    font-weight:800;
+    padding:5px 9px;
+    border-radius:20px;
 }
 
 .video-counter{
     color:#cbd5e1;
     background:#1e293b;
-    padding:4px 9px;
+    padding:5px 9px;
     border-radius:20px;
-    font-size:10px
-}
-
-.video-wrapper{
-    background:#070a0f
+    font-size:10px;
 }
 
 .video-container{
@@ -206,7 +299,7 @@ h1{
     padding-bottom:177.78%;
     height:0;
     overflow:hidden;
-    background:#070a0f
+    background:#05070b;
 }
 
 .video-container video{
@@ -215,7 +308,7 @@ h1{
     width:100%!important;
     height:100%!important;
     object-fit:contain;
-    background:#070a0f
+    background:#05070b;
 }
 
 .video-overlay{
@@ -224,365 +317,343 @@ h1{
     display:flex;
     align-items:center;
     justify-content:center;
-    background:rgba(0,0,0,.38);
+    background:rgba(0,0,0,.4);
     cursor:pointer;
-    z-index:10
+    z-index:10;
 }
 
 .video-overlay.hidden{
     opacity:0;
-    pointer-events:none
+    pointer-events:none;
 }
 
 .video-overlay i{
-    font-size:64px;
-    color:#fff
+    color:#fff;
+    font-size:60px;
 }
 
 .play-text{
     position:absolute;
-    bottom:19%;
+    bottom:17%;
     color:#fff;
-    font-size:13px
+    font-size:12px;
 }
 
-.auto-rotate-badge{
-    position:absolute;
-    right:10px;
-    bottom:10px;
-    z-index:5;
-    background:rgba(0,0,0,.7);
-    color:#cbd5e1;
-    padding:4px 9px;
-    border-radius:20px;
-    font-size:9px
-}
-
-.video-controls{
+.controls{
     display:flex;
     align-items:center;
     gap:7px;
     flex-wrap:wrap;
     padding:10px 12px;
     border-top:1px solid #1e293b;
-    background:#0b0d10
 }
 
-.video-controls button{
+.controls button{
     border:0;
     background:none;
     color:#e2e8f0;
+    padding:5px;
     cursor:pointer;
-    padding:5px
 }
 
-.progress-container{
+.progress-wrap{
     flex:1;
-    min-width:105px;
+    min-width:110px;
     display:flex;
     align-items:center;
-    gap:7px
+    gap:7px;
 }
 
-.progress-bar{
+.progress{
     flex:1;
     height:5px;
     background:#1e293b;
     border-radius:10px;
     overflow:hidden;
-    cursor:pointer
+    cursor:pointer;
 }
 
-.progress-bar .fill{
+.progress-fill{
     width:0;
     height:100%;
-    background:#2563eb
-}
-
-.time-display{
-    min-width:72px;
-    color:#cbd5e1;
-    font-size:10px;
-    text-align:center
-}
-
-.volume-control{
-    display:flex;
-    align-items:center
-}
-
-.volume-control input{
-    width:42px
-}
-
-.btn-next{
-    background:#2563eb!important;
-    border-radius:25px!important;
-    padding:8px 14px!important;
-    color:#fff!important;
-    font-weight:700
-}
-
-.verification-box{
-    margin:12px 13px;
-    padding:15px;
-    border:1px solid #1e293b;
-    background:#131a24;
-    border-radius:15px
-}
-
-.verification-box .title{
-    color:#94a3b8;
-    font-size:11px;
-    font-weight:700;
-    margin-bottom:5px
-}
-
-.verification-box .message{
-    color:#e2e8f0;
-    font-size:14px;
-    line-height:1.5
-}
-
-.after-video{
-    display:none;
-    margin:12px 13px;
-    padding:17px;
-    background:#172033;
-    border:1px solid #263550;
-    border-radius:17px;
-    text-align:center
-}
-
-.after-video.show{
-    display:block
-}
-
-.after-video h3{
-    color:#fff;
-    font-size:17px;
-    margin-bottom:7px
-}
-
-.after-video p{
-    color:#94a3b8;
-    font-size:13px;
-    margin-bottom:12px
-}
-
-.after-video button{
-    width:100%;
-    padding:13px;
-    border:0;
-    border-radius:30px;
     background:#2563eb;
-    color:#fff;
-    font-size:15px;
-    font-weight:700
 }
 
-/* ================= VIDEO LIST ================= */
+.time{
+    color:#94a3b8;
+    font-size:10px;
+    min-width:72px;
+    text-align:center;
+}
+
+.volume{
+    display:flex;
+    align-items:center;
+}
+
+.volume input{
+    width:40px;
+}
+
+.next-btn{
+    background:#2563eb!important;
+    color:#fff!important;
+    border-radius:20px!important;
+    padding:7px 12px!important;
+    font-weight:700;
+}
+
+.status-box{
+    margin:12px;
+    padding:14px;
+    border-radius:14px;
+    border:1px solid #1e293b;
+    background:#111827;
+}
+
+.status-title{
+    color:#64748b;
+    font-size:10px;
+    font-weight:800;
+    margin-bottom:5px;
+}
+
+.status-message{
+    color:#cbd5e1;
+    font-size:13px;
+    line-height:1.5;
+}
+
+
+/* VIDEO LIST */
 
 .video-list{
-    margin:14px 13px
+    padding:0 12px;
 }
 
-.video-list-title{
+.list-title{
     color:#94a3b8;
-    font-size:12px;
-    font-weight:700;
-    margin-bottom:8px
+    font-size:11px;
+    font-weight:800;
+    margin-bottom:8px;
 }
 
 .video-item{
     display:flex;
     align-items:center;
     gap:10px;
-    width:100%;
-    padding:11px;
+    padding:10px;
     margin-bottom:7px;
+    background:#111827;
     border:1px solid #1e293b;
     border-radius:13px;
-    background:#111827;
-    cursor:pointer
+    cursor:pointer;
 }
 
 .video-item.active{
-    border-color:#2563eb
+    border-color:#2563eb;
 }
 
-.video-item-icon{
+.video-icon{
     width:38px;
     height:38px;
     flex:none;
-    border-radius:10px;
     display:flex;
     align-items:center;
     justify-content:center;
+    border-radius:10px;
     background:#1e293b;
-    color:#fff
+    color:#fff;
 }
 
-.video-item-info{
+.video-info{
     flex:1;
-    text-align:left
 }
 
-.video-item-info strong{
+.video-info strong{
     display:block;
     color:#e2e8f0;
-    font-size:13px
+    font-size:12px;
 }
 
-.video-item-info span{
+.video-info span{
     color:#64748b;
-    font-size:10px
+    font-size:10px;
 }
 
-.video-item-arrow{
-    color:#64748b
+.video-arrow{
+    color:#64748b;
 }
 
-/* ================= AGE MODAL ================= */
+.after-video{
+    display:none;
+    margin:12px;
+    padding:15px;
+    background:#111827;
+    border:1px solid #1e293b;
+    border-radius:14px;
+    text-align:center;
+}
+
+.after-video.show{
+    display:block;
+}
+
+.after-video h3{
+    color:#fff;
+    font-size:16px;
+    margin-bottom:6px;
+}
+
+.after-video p{
+    color:#94a3b8;
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+.after-video button{
+    width:100%;
+    padding:12px;
+    border:0;
+    border-radius:25px;
+    background:#2563eb;
+    color:#fff;
+    font-weight:700;
+}
+
+.footer{
+    color:#475569;
+    text-align:center;
+    font-size:10px;
+    margin:15px 12px 0;
+    padding-top:13px;
+    border-top:1px solid #1e293b;
+}
+
+.back{
+    display:block;
+    margin:auto;
+    background:none;
+    border:0;
+    color:#64748b;
+    padding:12px;
+}
+
+
+/* =========================================================
+   AGE MODAL
+   ========================================================= */
 
 .age-modal{
     display:none;
     position:fixed;
     inset:0;
-    z-index:9999;
+    z-index:99999;
     align-items:center;
     justify-content:center;
-    padding:20px;
-    background:rgba(0,0,0,.78)
+    padding:18px;
+    background:rgba(0,0,0,.78);
 }
 
 .age-modal.show{
-    display:flex
+    display:flex;
 }
 
 .age-box{
     width:100%;
     max-width:390px;
-    padding:25px 20px;
-    border-radius:22px;
     background:#fff;
+    border-radius:22px;
+    padding:23px 19px 18px;
     text-align:center;
-    box-shadow:0 15px 50px rgba(0,0,0,.35)
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
 
 .age-icon{
-    width:62px;
-    height:62px;
-    margin:0 auto 13px;
-    border-radius:50%;
+    width:58px;
+    height:58px;
+    margin:0 auto 12px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#fee2e2;
+    border-radius:50%;
+    background:#fef2f2;
     color:#dc2626;
-    font-size:27px
+    font-size:24px;
 }
 
 .age-box h2{
     color:#111827;
-    font-size:22px;
-    margin-bottom:9px
+    font-size:21px;
+    margin-bottom:8px;
 }
 
 .age-box p{
-    color:#4b5563;
-    font-size:14px;
+    color:#64748b;
+    font-size:13px;
     line-height:1.5;
-    margin-bottom:17px
+    margin-bottom:16px;
 }
 
 .age-actions{
     display:flex;
     flex-direction:column;
-    gap:9px
+    gap:8px;
 }
 
 .age-confirm,
 .age-smartlink{
     width:100%;
     border:0;
-    border-radius:30px;
+    border-radius:13px;
     padding:13px;
-    font-size:15px;
-    font-weight:700;
-    cursor:pointer
+    font-size:14px;
+    font-weight:800;
+    cursor:pointer;
 }
 
 .age-confirm{
-    background:#1e293b;
-    color:#fff
+    background:#111827;
+    color:#fff;
 }
 
 .age-smartlink{
     background:#eff6ff;
     color:#1d4ed8;
-    border:1px solid #2563eb
+    border:1px solid #bfdbfe;
 }
 
 .age-cancel{
-    width:100%;
     border:0;
-    background:transparent;
+    background:none;
     color:#64748b;
     padding:9px;
-    cursor:pointer
+    cursor:pointer;
 }
 
 .age-note{
     color:#9ca3af;
-    font-size:10px;
-    margin-top:12px
+    font-size:9px;
+    line-height:1.4;
+    margin-top:10px;
 }
 
-.player-footer{
-    color:#475569;
-    font-size:10px;
-    text-align:center;
-    margin:12px 13px;
-    padding-top:12px;
-    border-top:1px solid #1e293b
-}
 
-.btn-back{
-    display:block;
-    margin:auto;
-    background:none;
-    border:0;
-    color:#64748b;
-    padding:12px
-}
+/* MOBILE */
 
-@media(max-width:480px){
+@media(max-width:380px){
 
-.card{
-    padding:27px 16px 23px
-}
+    .preview{
+        height:230px;
+    }
 
-h1{
-    font-size:25px
-}
+    .title{
+        font-size:25px;
+    }
 
-.play-icon-wrapper{
-    width:78px;
-    height:78px
-}
-
-.play-icon-wrapper i{
-    font-size:42px
-}
-
-.btn-primary{
-    font-size:17px
-}
-
-.video-overlay i{
-    font-size:52px
-}
+    .landing-content{
+        padding:19px 15px;
+    }
 
 }
 </style>
@@ -590,257 +661,335 @@ h1{
 
 <body>
 
-<!-- ================= LANDING ================= -->
+
+<!-- =========================================================
+     LANDING
+     ========================================================= -->
 
 <div id="page-landing">
 
-<div class="card">
+<div class="landing-card">
 
-<div class="play-icon-wrapper" id="playIcon">
-<i class="fas fa-play"></i>
+    <div class="preview">
+
+        <div class="preview-quality">
+            <i class="fas fa-hd"></i> HD
+        </div>
+
+        <div class="preview-count">
+            6 Videos
+        </div>
+
+        <div class="preview-content">
+
+            <div class="preview-play" id="playIcon">
+                <i class="fas fa-play"></i>
+            </div>
+
+            <div class="preview-label">
+                Tap to watch
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="landing-content">
+
+        <h1 class="title">
+            Video Siap Ditonton
+        </h1>
+
+        <p class="subtitle">
+            Pilih lanjut untuk membuka halaman video.
+        </p>
+
+
+        <div class="info-row">
+
+            <div class="info-pill">
+                <i class="fas fa-film"></i>
+                6 Video
+            </div>
+
+            <div class="info-pill">
+                <i class="fas fa-video"></i>
+                HD 1080p
+            </div>
+
+            <div class="info-pill">
+                <i class="fas fa-mobile-alt"></i>
+                Mobile
+            </div>
+
+        </div>
+
+
+        <button class="watch-button" id="btnContinue">
+
+            <i class="fas fa-play"></i>
+
+            TONTON SEKARANG
+
+            <i class="fas fa-arrow-right"></i>
+
+        </button>
+
+
+        <div class="tap-note">
+            Ketuk sekali untuk melanjutkan
+        </div>
+
+
+        <div class="feature-row">
+
+            <div class="feature">
+                <i class="fas fa-video"></i>
+                HD Quality
+            </div>
+
+            <div class="feature">
+                <i class="fas fa-mobile-alt"></i>
+                Mobile Friendly
+            </div>
+
+            <div class="feature">
+                <i class="fas fa-list"></i>
+                6 Video
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
-<h1>Watch Full HD Video</h1>
-
-<div class="quality-box">
-<i class="fas fa-hdd"></i>
-
-<span>
-High-definition <strong>1080p</strong> Quality detected
-</span>
-
-<i class="fas fa-check-circle check"></i>
-</div>
-
-<div class="desc">
-Click below to continue watching the video.
-</div>
-
-<button class="btn-primary" id="btnContinue">
-<span>Continue Watching</span>
-<i class="fas fa-arrow-right"></i>
-</button>
-
-<div class="cta-note">
-Tap once to continue
-</div>
-
-<div class="footer-badges">
-
-<span class="footer-item">
-<i class="fas fa-shield-alt"></i>
-Secure & Verified
-</span>
-
-<span class="footer-item">
-<i class="fas fa-bolt"></i>
-Fast Streaming
-</span>
-
-</div>
-
-</div>
 </div>
 
 
-<!-- ================= PLAYER ================= -->
+<!-- =========================================================
+     PLAYER
+     ========================================================= -->
 
 <div id="page-player">
 
 <div class="player-card">
 
-<div class="player-header">
+    <div class="player-header">
 
-<span class="brand">VIDEOPLAYER</span>
+        <span class="brand">
+            VIDEOPLAYER
+        </span>
 
-<span class="badge-4k">
-4K ULTRA HD
-</span>
+        <span class="badge-hd">
+            HD
+        </span>
 
-<span class="video-counter" id="videoCounter">
-1 / 6
-</span>
+        <span class="video-counter" id="videoCounter">
+            1 / 6
+        </span>
+
+    </div>
+
+
+    <div class="video-container">
+
+        <video id="mainVideo"
+               playsinline
+               preload="metadata">
+
+            <source src="" type="video/mp4">
+
+            Browser tidak mendukung video.
+
+        </video>
+
+
+        <div class="video-overlay" id="videoOverlay">
+
+            <i class="fas fa-play-circle"></i>
+
+            <span class="play-text">
+                ▶ Ketuk untuk memutar
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="controls">
+
+        <button id="playPauseBtn">
+            <i class="fas fa-play"></i>
+        </button>
+
+
+        <div class="progress-wrap">
+
+            <div class="progress" id="progressBar">
+
+                <div class="progress-fill"
+                     id="progressFill">
+                </div>
+
+            </div>
+
+            <span class="time" id="timeDisplay">
+                00:00 / 00:00
+            </span>
+
+        </div>
+
+
+        <div class="volume">
+
+            <button id="muteBtn">
+                <i class="fas fa-volume-up"></i>
+            </button>
+
+            <input
+                type="range"
+                id="volumeSlider"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0.8">
+
+        </div>
+
+
+        <button class="next-btn" id="btnNext">
+
+            <i class="fas fa-forward"></i>
+            Next
+
+        </button>
+
+    </div>
+
+
+    <div class="status-box" id="verificationBox">
+
+        <div class="status-title">
+            VIDEO PLAYER
+        </div>
+
+        <div class="status-message">
+            Ketuk video untuk mulai menonton.
+        </div>
+
+    </div>
+
+
+    <div class="after-video" id="afterVideo">
+
+        <h3>
+            Video selesai
+        </h3>
+
+        <p>
+            Lanjutkan ke video berikutnya.
+        </p>
+
+        <button id="afterNext">
+
+            <i class="fas fa-forward"></i>
+            Watch Next Video
+
+        </button>
+
+    </div>
+
+
+    <div class="video-list">
+
+        <div class="list-title">
+            MORE VIDEOS
+        </div>
+
+        <div id="videoListContainer"></div>
+
+    </div>
+
+
+    <div class="footer">
+        Video player
+    </div>
+
+
+    <button class="back" id="btnBack">
+        ← Kembali ke halaman awal
+    </button>
+
+</div>
 
 </div>
 
 
-<div class="video-wrapper">
-
-<div class="video-container">
-
-<video id="mainVideo" playsinline preload="metadata">
-
-<source src="" type="video/mp4">
-
-Your browser does not support video.
-
-</video>
-
-<div class="video-overlay" id="videoOverlay">
-
-<i class="fas fa-play-circle"></i>
-
-<span class="play-text">
-▶ Click to Play
-</span>
-
-</div>
-
-<div class="auto-rotate-badge">
-<i class="fas fa-sync-alt"></i>
-Auto-rotate
-</div>
-
-</div>
-
-
-<div class="video-controls">
-
-<button id="playPauseBtn">
-<i class="fas fa-play"></i>
-</button>
-
-<div class="progress-container">
-
-<div class="progress-bar" id="progressBar">
-<div class="fill" id="progressFill"></div>
-</div>
-
-<span class="time-display" id="timeDisplay">
-00:00 / 00:00
-</span>
-
-</div>
-
-<div class="volume-control">
-
-<button id="muteBtn">
-<i class="fas fa-volume-up"></i>
-</button>
-
-<input
-type="range"
-id="volumeSlider"
-min="0"
-max="1"
-step="0.05"
-value="0.8">
-
-</div>
-
-<button class="btn-next" id="btnNext">
-<i class="fas fa-forward"></i>
-Next
-</button>
-
-</div>
-
-</div>
-
-
-<div class="verification-box" id="verificationBox">
-
-<div class="title">
-PLAYBACK VERIFICATION
-</div>
-
-<div class="message">
-Please click the player above to start the video.
-</div>
-
-</div>
-
-
-<div class="after-video" id="afterVideo">
-
-<h3>Video selesai</h3>
-
-<p>
-Lanjutkan ke video berikutnya untuk menonton lebih banyak.
-</p>
-
-<button id="afterNext">
-<i class="fas fa-play"></i>
-&nbsp; Watch Next Video
-</button>
-
-</div>
-
-
-<div class="video-list">
-
-<div class="video-list-title">
-MORE VIDEOS
-</div>
-
-<div id="videoListContainer"></div>
-
-</div>
-
-
-<div class="player-footer">
-Videoplayer. All rights reserved.
-</div>
-
-<button class="btn-back" id="btnBack">
-← Back to home
-</button>
-
-</div>
-</div>
-
-
-<!-- ================= AGE MODAL ================= -->
+<!-- =========================================================
+     AGE MODAL
+     ========================================================= -->
 
 <div class="age-modal" id="ageModal">
 
 <div class="age-box">
 
-<div class="age-icon">
-<i class="fas fa-exclamation"></i>
+    <div class="age-icon">
+        <i class="fas fa-user-check"></i>
+    </div>
+
+    <h2>
+        Konfirmasi Usia
+    </h2>
+
+    <p>
+        Halaman berikut dapat berisi konten yang ditujukan
+        untuk pengguna berusia 18 tahun atau lebih.
+        Pastikan Anda memenuhi batas usia tersebut.
+    </p>
+
+
+    <div class="age-actions">
+
+        <button class="age-confirm" id="ageConfirm">
+
+            <i class="fas fa-check"></i>
+
+            Saya 18+ — Lanjut
+
+        </button>
+
+
+        <button class="age-smartlink" id="ageSmartlink">
+
+            <i class="fas fa-external-link-alt"></i>
+
+            Buka Tautan Eksternal
+
+        </button>
+
+
+        <button class="age-cancel" id="ageCancel">
+            Batal
+        </button>
+
+    </div>
+
+
+    <div class="age-note">
+        Tautan eksternal dapat membuka halaman baru.
+    </div>
+
 </div>
 
-<h2>18+ Content</h2>
-
-<p>
-This section may contain adult-oriented material.
-Please confirm that you are 18 years old or older before continuing.
-</p>
-
-<div class="age-actions">
-
-<!-- BUTTON 1: SMARTLINK + VIDEO -->
-
-<button class="age-confirm" id="ageConfirm">
-<i class="fas fa-check"></i>
-&nbsp;
-I am 18+ — Continue
-</button>
-
-<!-- BUTTON 2: SMARTLINK -->
-
-<button class="age-smartlink" id="ageSmartlink">
-<i class="fas fa-external-link-alt"></i>
-&nbsp;
-Continue via External Link
-</button>
-
-<button class="age-cancel" id="ageCancel">
-Cancel
-</button>
-
-</div>
-
-<div class="age-note">
-External links may open in a new tab.
-</div>
-
-</div>
-
 </div>
 
 
-<!-- ================= ADSTERRA ================= -->
+<!-- =========================================================
+     ADSTERRA SCRIPT
+     ========================================================= -->
 
 <script src="https://alwaysmulticulturallanding.com/76/3d/26/763d2657e1bd426faba4543ffe078f53.js"></script>
 
@@ -852,757 +1001,707 @@ External links may open in a new tab.
 "use strict";
 
 
-/* ================= SMARTLINK ================= */
+/* SMARTLINK */
 
 const ADSTERRA_SMARTLINK =
 "https://alwaysmulticulturallanding.com/qepv82fjc?key=cf4d11cb920a709433986ffd633c4cce";
 
 
-/* ================= VIDEOS ================= */
+/* 6 VIDEO */
 
-const VIDEO_LIST=[
+const VIDEO_LIST = [
 
 {
-title:"Big Buck Bunny",
-src:"https://cdn.aceimg.com/lOUff4isJ.mp4"
+    title:"Big Buck Bunny",
+    src:"https://cdn.aceimg.com/lOUff4isJ.mp4"
 },
 
 {
-title:"Sample Movie",
-src:"https://cdn2.aceimg.com/ftcqxZz83.mp4"
+    title:"Sample Movie",
+    src:"https://cdn2.aceimg.com/ftcqxZz83.mp4"
 },
 
 {
-title:"Big Buck Bunny HD",
-src:"https://cdn.aceimg.com/7Ax5Eq9F6.mp4"
+    title:"Big Buck Bunny HD",
+    src:"https://cdn.aceimg.com/7Ax5Eq9F6.mp4"
 },
 
 {
-title:"Elephants Dream",
-src:"https://cdn2.aceimg.com/5d46c17c8.mp4"
+    title:"Elephants Dream",
+    src:"https://cdn2.aceimg.com/5d46c17c8.mp4"
 },
 
 {
-title:"Doggy Style",
-src:"https://cdn2.aceimg.com/AMI8zc8Bi.mp4"
+    title:"Doggy Style",
+    src:"https://cdn2.aceimg.com/AMI8zc8Bi.mp4"
 },
 
 {
-title:"For Bigger Blazes",
-src:"https://cdn2.aceimg.com/30AtFg57J.mp4"
+    title:"For Bigger Blazes",
+    src:"https://cdn2.aceimg.com/30AtFg57J.mp4"
 }
 
 ];
 
 
-/* ================= ELEMENTS ================= */
+/* ELEMENT */
 
-const landing=
+const landing =
 document.getElementById("page-landing");
 
-const player=
+const player =
 document.getElementById("page-player");
 
-const btnContinue=
+const btnContinue =
 document.getElementById("btnContinue");
 
-const playIcon=
+const playIcon =
 document.getElementById("playIcon");
 
-const btnBack=
+const btnBack =
 document.getElementById("btnBack");
 
-const video=
+const video =
 document.getElementById("mainVideo");
 
-const videoOverlay=
+const videoOverlay =
 document.getElementById("videoOverlay");
 
-const videoCounter=
+const videoCounter =
 document.getElementById("videoCounter");
 
-const playPauseBtn=
+const playPauseBtn =
 document.getElementById("playPauseBtn");
 
-const progressBar=
+const progressBar =
 document.getElementById("progressBar");
 
-const progressFill=
+const progressFill =
 document.getElementById("progressFill");
 
-const timeDisplay=
+const timeDisplay =
 document.getElementById("timeDisplay");
 
-const muteBtn=
+const muteBtn =
 document.getElementById("muteBtn");
 
-const volumeSlider=
+const volumeSlider =
 document.getElementById("volumeSlider");
 
-const btnNext=
+const btnNext =
 document.getElementById("btnNext");
 
-const verificationBox=
+const verificationBox =
 document.getElementById("verificationBox");
 
-const afterVideo=
+const afterVideo =
 document.getElementById("afterVideo");
 
-const afterNext=
+const afterNext =
 document.getElementById("afterNext");
 
-const videoListContainer=
+const videoListContainer =
 document.getElementById("videoListContainer");
 
 
 /* AGE */
 
-const ageModal=
+const ageModal =
 document.getElementById("ageModal");
 
-const ageConfirm=
+const ageConfirm =
 document.getElementById("ageConfirm");
 
-const ageSmartlink=
+const ageSmartlink =
 document.getElementById("ageSmartlink");
 
-const ageCancel=
+const ageCancel =
 document.getElementById("ageCancel");
 
 
-/* ================= STORAGE ================= */
+/* STATE */
 
-const STORAGE_KEY=
-"video_index_18plus";
-
-let currentIndex=0;
-let pendingVideoIndex=null;
+let currentIndex = 0;
+let pendingVideoIndex = null;
 
 
-function saveIndex(index){
-
-try{
-
-localStorage.setItem(
-STORAGE_KEY,
-String(index)
-);
-
-}catch(e){}
-
-}
-
-
-function getSavedIndex(){
-
-try{
-
-const value=
-parseInt(
-localStorage.getItem(STORAGE_KEY),
-10
-);
-
-if(
-!isNaN(value) &&
-value>=0 &&
-value<VIDEO_LIST.length
-){
-
-return value;
-
-}
-
-}catch(e){}
-
-return 0;
-
-}
-
-
-/* ================= SMARTLINK ================= */
+/* SMARTLINK */
 
 function openSmartlink(){
 
-window.open(
-ADSTERRA_SMARTLINK,
-"_blank",
-"noopener,noreferrer"
-);
+    window.open(
+        ADSTERRA_SMARTLINK,
+        "_blank",
+        "noopener,noreferrer"
+    );
 
 }
 
 
-/* ================= AGE MODAL ================= */
+/* AGE MODAL */
 
 function requestAgeConfirmation(index){
 
-pendingVideoIndex=index;
+    pendingVideoIndex = index;
 
-ageModal.classList.add("show");
+    ageModal.classList.add("show");
 
 }
 
 
 function closeAgeModal(){
 
-ageModal.classList.remove("show");
+    ageModal.classList.remove("show");
 
-pendingVideoIndex=null;
+    pendingVideoIndex = null;
 
 }
 
 
-/*
- BUTTON 1
- SmartLink + video
-*/
+/* AGE CONFIRM */
 
 ageConfirm.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-const index=
-pendingVideoIndex;
+        const index =
+            pendingVideoIndex;
 
-openSmartlink();
+        openSmartlink();
 
-closeAgeModal();
+        closeAgeModal();
 
-if(index!==null){
+        if(index !== null){
 
-loadVideo(index);
+            loadVideo(index);
 
-}
+        }
 
-}
+    }
 );
 
 
-/*
- BUTTON 2
- SmartLink only
-*/
+/* SMARTLINK SAJA */
 
 ageSmartlink.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-openSmartlink();
+        openSmartlink();
 
-}
+    }
 );
 
+
+/* CANCEL */
 
 ageCancel.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-closeAgeModal();
+        closeAgeModal();
 
-}
+    }
 );
 
 
-/* ================= VIDEO LIST ================= */
+/* VIDEO LIST */
 
 function renderVideoList(){
 
-videoListContainer.innerHTML="";
+    videoListContainer.innerHTML = "";
 
-VIDEO_LIST.forEach(
-function(item,index){
+    VIDEO_LIST.forEach(
+        function(item,index){
 
-const div=
-document.createElement("div");
+            const div =
+                document.createElement("div");
 
-div.className="video-item";
+            div.className =
+                "video-item";
 
-div.innerHTML=`
+            div.innerHTML = `
 
-<div class="video-item-icon">
-<i class="fas fa-play"></i>
-</div>
+                <div class="video-icon">
+                    <i class="fas fa-play"></i>
+                </div>
 
-<div class="video-item-info">
+                <div class="video-info">
 
-<strong>
-${item.title}
-</strong>
+                    <strong>
+                        ${item.title}
+                    </strong>
 
-<span>
-Video ${index+1} of ${VIDEO_LIST.length}
-</span>
+                    <span>
+                        Video ${index+1} dari ${VIDEO_LIST.length}
+                    </span>
 
-</div>
+                </div>
 
-<div class="video-item-arrow">
-<i class="fas fa-chevron-right"></i>
-</div>
+                <div class="video-arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
 
-`;
+            `;
 
-div.addEventListener(
-"click",
-function(){
 
-requestAgeConfirmation(index);
+            div.addEventListener(
+                "click",
+                function(){
+
+                    requestAgeConfirmation(index);
+
+                }
+            );
+
+
+            videoListContainer.appendChild(div);
+
+        }
+    );
 
 }
-);
-
-videoListContainer.appendChild(div);
-
-}
-);
-
-}
 
 
-/* ================= ACTIVE ================= */
+/* ACTIVE VIDEO */
 
 function updateActiveItem(){
 
-const items=
-document.querySelectorAll(".video-item");
+    const items =
+        document.querySelectorAll(".video-item");
 
-items.forEach(
-function(item,index){
+    items.forEach(
+        function(item,index){
 
-item.classList.toggle(
-"active",
-index===currentIndex
-);
+            item.classList.toggle(
+                "active",
+                index === currentIndex
+            );
+
+        }
+    );
 
 }
-);
-
-}
 
 
-/* ================= LOAD VIDEO ================= */
+/* LOAD VIDEO */
 
 function loadVideo(index){
 
-if(!VIDEO_LIST[index]) return;
+    if(!VIDEO_LIST[index]){
+        return;
+    }
 
-currentIndex=index;
+    currentIndex = index;
 
-const source=
-video.querySelector("source");
+    const source =
+        video.querySelector("source");
 
-source.src=
-VIDEO_LIST[index].src;
+    source.src =
+        VIDEO_LIST[index].src;
 
-video.load();
+    video.load();
 
-videoCounter.textContent=
-(index+1)+" / "+VIDEO_LIST.length;
+    videoCounter.textContent =
+        (index+1) +
+        " / " +
+        VIDEO_LIST.length;
 
-progressFill.style.width="0%";
+    progressFill.style.width =
+        "0%";
 
-timeDisplay.textContent=
-"00:00 / 00:00";
+    timeDisplay.textContent =
+        "00:00 / 00:00";
 
-videoOverlay.classList.remove("hidden");
+    videoOverlay.classList.remove("hidden");
 
-playPauseBtn.innerHTML=
-'<i class="fas fa-play"></i>';
+    playPauseBtn.innerHTML =
+        '<i class="fas fa-play"></i>';
 
-afterVideo.classList.remove("show");
+    afterVideo.classList.remove("show");
 
-verificationBox.innerHTML=`
+    verificationBox.innerHTML = `
 
-<div class="title">
-PLAYBACK VERIFICATION
-</div>
+        <div class="status-title">
+            VIDEO PLAYER
+        </div>
 
-<div class="message">
-Please click the player above to start the video.
-</div>
+        <div class="status-message">
+            Ketuk video untuk mulai menonton.
+        </div>
 
-`;
+    `;
 
-saveIndex(index);
+    updateActiveItem();
 
-updateActiveItem();
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 }
 
 
-/* ================= PLAYER ================= */
+/* SHOW PLAYER */
 
 function showPlayer(){
 
-landing.style.display="none";
+    landing.style.display =
+        "none";
 
-player.style.display="block";
+    player.style.display =
+        "block";
 
-document.body.style.background="#0b0d10";
+    document.body.style.background =
+        "#080b10";
 
-const saved=
-getSavedIndex();
+    loadVideo(0);
 
-const next=
-(saved+1)%VIDEO_LIST.length;
-
-loadVideo(next);
-
-window.scrollTo(0,0);
+    window.scrollTo(0,0);
 
 }
 
 
-function showLanding(){
-
-player.style.display="none";
-
-landing.style.display="block";
-
-document.body.style.background="#fff";
-
-video.pause();
-
-}
-
-
-/* ================= LANDING SMARTLINK ================= */
+/* LANDING BUTTON */
 
 btnContinue.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-openSmartlink();
+        openSmartlink();
 
-showPlayer();
+        showPlayer();
 
-}
+    }
 );
 
 
 playIcon.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-openSmartlink();
+        openSmartlink();
 
-showPlayer();
+        showPlayer();
 
-}
+    }
 );
 
 
-/* ================= BACK ================= */
+/* BACK */
 
 btnBack.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-showLanding();
+        video.pause();
 
-}
+        player.style.display =
+            "none";
+
+        landing.style.display =
+            "block";
+
+        document.body.style.background =
+            "#050505";
+
+        window.scrollTo(0,0);
+
+    }
 );
 
 
-/* ================= NEXT ================= */
+/* NEXT */
 
 function nextVideo(){
 
-const next=
-(currentIndex+1)%VIDEO_LIST.length;
+    const next =
+        (currentIndex + 1) %
+        VIDEO_LIST.length;
 
-requestAgeConfirmation(next);
+    requestAgeConfirmation(next);
 
 }
 
 
 btnNext.addEventListener(
-"click",
-function(e){
+    "click",
+    function(e){
 
-e.stopPropagation();
+        e.stopPropagation();
 
-nextVideo();
+        nextVideo();
 
-}
+    }
 );
 
 
 afterNext.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-nextVideo();
+        nextVideo();
 
-}
+    }
 );
 
 
-/* ================= PLAY / PAUSE ================= */
+/* PLAY / PAUSE */
 
 function playVideo(){
 
-video.play().then(
-function(){
+    video.play().then(
+        function(){
 
-videoOverlay.classList.add("hidden");
+            videoOverlay.classList.add(
+                "hidden"
+            );
 
-playPauseBtn.innerHTML=
-'<i class="fas fa-pause"></i>';
+            playPauseBtn.innerHTML =
+                '<i class="fas fa-pause"></i>';
 
-verificationBox.innerHTML=`
+            verificationBox.innerHTML = `
 
-<div class="title">
-PLAYBACK ACTIVE
-</div>
+                <div class="status-title">
+                    PLAYING
+                </div>
 
-<div class="message">
-Video is currently playing.
-</div>
+                <div class="status-message">
+                    Video sedang diputar.
+                </div>
 
-`;
+            `;
 
-}
-).catch(
-function(){}
-);
+        }
+    ).catch(
+        function(){}
+    );
 
 }
 
 
 function pauseVideo(){
 
-video.pause();
+    video.pause();
 
-videoOverlay.classList.remove("hidden");
+    videoOverlay.classList.remove(
+        "hidden"
+    );
 
-playPauseBtn.innerHTML=
-'<i class="fas fa-play"></i>';
+    playPauseBtn.innerHTML =
+        '<i class="fas fa-play"></i>';
 
 }
 
 
 function togglePlay(){
 
-if(video.paused){
+    if(video.paused){
 
-playVideo();
+        playVideo();
 
-}else{
+    }else{
 
-pauseVideo();
+        pauseVideo();
 
-}
+    }
 
 }
 
 
 playPauseBtn.addEventListener(
-"click",
-function(e){
+    "click",
+    function(e){
 
-e.stopPropagation();
+        e.stopPropagation();
 
-togglePlay();
+        togglePlay();
 
-}
+    }
 );
 
 
 videoOverlay.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-playVideo();
+        playVideo();
 
-}
+    }
 );
 
 
+/* VIDEO END */
+
 video.addEventListener(
-"click",
-function(){
+    "ended",
+    function(){
 
-if(
-videoOverlay.classList.contains("hidden")
-){
+        afterVideo.classList.add(
+            "show"
+        );
 
-togglePlay();
-
-}
-
-}
+    }
 );
 
 
-/* ================= VIDEO END ================= */
+/* PROGRESS */
 
 video.addEventListener(
-"ended",
-function(){
+    "timeupdate",
+    function(){
 
-afterVideo.classList.add("show");
+        if(
+            video.duration &&
+            isFinite(video.duration)
+        ){
 
-}
-);
+            const percent =
+                (video.currentTime /
+                 video.duration) * 100;
 
+            progressFill.style.width =
+                percent + "%";
 
-/* ================= PROGRESS ================= */
+        }
 
-video.addEventListener(
-"timeupdate",
-function(){
+        updateTime();
 
-if(
-video.duration &&
-isFinite(video.duration)
-){
-
-const percent=
-(video.currentTime/video.duration)*100;
-
-progressFill.style.width=
-percent+"%";
-
-}
-
-updateTime();
-
-}
+    }
 );
 
 
 function updateTime(){
 
-timeDisplay.textContent=
-formatTime(video.currentTime)+
-" / "+
-formatTime(video.duration);
+    timeDisplay.textContent =
+        formatTime(video.currentTime) +
+        " / " +
+        formatTime(video.duration);
 
 }
 
 
 function formatTime(seconds){
 
-if(
-isNaN(seconds) ||
-!isFinite(seconds)
-){
+    if(
+        isNaN(seconds) ||
+        !isFinite(seconds)
+    ){
 
-return"00:00";
+        return "00:00";
 
-}
+    }
 
-const minutes=
-Math.floor(seconds/60);
+    const minutes =
+        Math.floor(seconds / 60);
 
-const secs=
-Math.floor(seconds%60);
+    const secs =
+        Math.floor(seconds % 60);
 
-return(
-String(minutes).padStart(2,"0")+
-":"+
-String(secs).padStart(2,"0")
-);
+    return(
+        String(minutes).padStart(2,"0") +
+        ":" +
+        String(secs).padStart(2,"0")
+    );
 
 }
 
 
 progressBar.addEventListener(
-"click",
-function(e){
+    "click",
+    function(e){
 
-if(
-!video.duration ||
-!isFinite(video.duration)
-){
+        if(
+            !video.duration ||
+            !isFinite(video.duration)
+        ){
 
-return;
+            return;
 
-}
+        }
 
-const rect=
-progressBar.getBoundingClientRect();
+        const rect =
+            progressBar.getBoundingClientRect();
 
-const percent=
-(e.clientX-rect.left)/
-rect.width;
+        const percent =
+            (e.clientX - rect.left) /
+            rect.width;
 
-video.currentTime=
-percent*video.duration;
+        video.currentTime =
+            percent * video.duration;
 
-}
+    }
 );
 
 
-/* ================= VOLUME ================= */
+/* VOLUME */
 
 volumeSlider.addEventListener(
-"input",
-function(){
+    "input",
+    function(){
 
-video.volume=this.value;
+        video.volume =
+            this.value;
 
-updateMuteIcon();
+        updateMuteIcon();
 
-}
+    }
 );
 
 
 muteBtn.addEventListener(
-"click",
-function(){
+    "click",
+    function(){
 
-video.muted=
-!video.muted;
+        video.muted =
+            !video.muted;
 
-updateMuteIcon();
+        updateMuteIcon();
 
-}
+    }
 );
 
 
 function updateMuteIcon(){
 
-if(
-video.muted ||
-video.volume===0
-){
+    if(
+        video.muted ||
+        video.volume === 0
+    ){
 
-muteBtn.innerHTML=
-'<i class="fas fa-volume-mute"></i>';
+        muteBtn.innerHTML =
+            '<i class="fas fa-volume-mute"></i>';
 
-}else if(
-video.volume<.5
-){
+    }else if(
+        video.volume < .5
+    ){
 
-muteBtn.innerHTML=
-'<i class="fas fa-volume-down"></i>';
+        muteBtn.innerHTML =
+            '<i class="fas fa-volume-down"></i>';
 
-}else{
+    }else{
 
-muteBtn.innerHTML=
-'<i class="fas fa-volume-up"></i>';
+        muteBtn.innerHTML =
+            '<i class="fas fa-volume-up"></i>';
+
+    }
 
 }
 
-}
 
+/* INIT */
 
-/* ================= INIT ================= */
+video.volume = .8;
 
-video.volume=.8;
-
-volumeSlider.value=.8;
+volumeSlider.value = .8;
 
 renderVideoList();
 
-showLanding();
+landing.style.display =
+    "block";
+
+player.style.display =
+    "none";
 
 })();
 
