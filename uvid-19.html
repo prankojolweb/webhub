@@ -3,14 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Watch Full HD Video</title>
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -24,11 +22,9 @@ body{
     background:#fff;
 }
 
-/* ================= LANDING ================= */
-
-#page-landing{
+/* LANDING */
+#landing{
     min-height:100vh;
-    width:100%;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -46,14 +42,14 @@ body{
     box-shadow:0 5px 25px rgba(0,0,0,.07);
 }
 
-.play-icon-wrapper{
+.play-icon{
     display:inline-block;
+    margin-bottom:15px;
     cursor:pointer;
-    margin-bottom:12px;
 }
 
-.play-icon-wrapper i{
-    font-size:70px;
+.play-icon i{
+    font-size:72px;
     color:#1e293b;
 }
 
@@ -63,7 +59,7 @@ h1{
     margin-bottom:20px;
 }
 
-.quality-box{
+.quality{
     display:inline-flex;
     align-items:center;
     justify-content:center;
@@ -78,15 +74,15 @@ h1{
     font-size:14px;
 }
 
-.quality-box i{
+.quality i:first-child{
     color:#2563eb;
 }
 
-.quality-box .check{
+.quality .check{
     color:#16a34a;
 }
 
-.quality-box strong{
+.quality strong{
     background:#e8ecf0;
     padding:2px 8px;
     border-radius:20px;
@@ -109,17 +105,13 @@ h1{
     font-size:17px;
     font-weight:600;
     cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
 }
 
 .btn-primary:active{
     transform:scale(.97);
 }
 
-.footer-badges{
+.footer{
     display:flex;
     justify-content:center;
     gap:20px;
@@ -129,32 +121,31 @@ h1{
     border-top:1px solid #eceff3;
 }
 
-.footer-item{
+.footer span{
     color:#334155;
     font-size:13px;
 }
 
-.footer-item i{
+.footer i{
     color:#2563eb;
     margin-right:5px;
 }
 
-/* ================= PLAYER ================= */
-
-#page-player{
+/* PLAYER */
+#playerPage{
     display:none;
     width:100%;
     min-height:100vh;
     background:#0b0d10;
 }
 
-.player-card{
+.player{
     width:100%;
     background:#0b0d10;
     padding:12px 0 20px;
 }
 
-.player-header{
+.header{
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -170,7 +161,7 @@ h1{
     letter-spacing:1px;
 }
 
-.badge-4k{
+.badge{
     background:#f59e0b;
     color:#0b0d10;
     font-size:10px;
@@ -179,17 +170,12 @@ h1{
     border-radius:30px;
 }
 
-.video-counter{
+.counter{
     color:#94a3b8;
     font-size:10px;
     background:#1e293b;
     padding:4px 10px;
     border-radius:30px;
-}
-
-.video-wrapper{
-    width:100%;
-    background:#0a0e14;
 }
 
 .video-container{
@@ -201,16 +187,16 @@ h1{
     background:#0a0e14;
 }
 
-.video-container video{
+video{
     position:absolute;
     inset:0;
-    width:100%!important;
-    height:100%!important;
+    width:100%;
+    height:100%;
     object-fit:contain;
     background:#0a0e14;
 }
 
-.video-overlay{
+.overlay{
     position:absolute;
     inset:0;
     display:flex;
@@ -218,17 +204,16 @@ h1{
     justify-content:center;
     background:rgba(0,0,0,.3);
     cursor:pointer;
-    z-index:10;
 }
 
-.video-overlay.hidden{
+.overlay.hidden{
     opacity:0;
     pointer-events:none;
 }
 
-.video-overlay i{
+.overlay i{
     font-size:70px;
-    color:rgba(255,255,255,.86);
+    color:rgba(255,255,255,.88);
 }
 
 .play-text{
@@ -238,19 +223,7 @@ h1{
     font-size:13px;
 }
 
-.auto-rotate-badge{
-    position:absolute;
-    right:12px;
-    bottom:12px;
-    z-index:5;
-    padding:5px 10px;
-    border-radius:30px;
-    background:rgba(0,0,0,.7);
-    color:#94a3b8;
-    font-size:10px;
-}
-
-.video-controls{
+.controls{
     display:flex;
     align-items:center;
     gap:8px;
@@ -260,7 +233,7 @@ h1{
     border-top:1px solid #1e293b;
 }
 
-.video-controls button{
+.controls button{
     background:none;
     border:0;
     color:#e2e8f0;
@@ -276,7 +249,7 @@ h1{
     gap:8px;
 }
 
-.progress-bar{
+.progress{
     flex:1;
     height:4px;
     background:#1e293b;
@@ -284,30 +257,30 @@ h1{
     cursor:pointer;
 }
 
-.progress-fill{
+.fill{
     width:0;
     height:100%;
     background:#2563eb;
     border-radius:10px;
 }
 
-.time-display{
+.time{
     color:#cbd5e1;
     font-size:11px;
     min-width:78px;
     text-align:center;
 }
 
-.volume-control{
+.volume{
     display:flex;
     align-items:center;
 }
 
-.volume-control input{
+.volume input{
     width:45px;
 }
 
-.btn-next{
+.next{
     background:#1e293b!important;
     border:1px solid #334155!important;
     border-radius:30px;
@@ -315,15 +288,7 @@ h1{
     font-size:11px;
 }
 
-.quality-badge{
-    color:#94a3b8;
-    background:#1e293b;
-    padding:3px 8px;
-    border-radius:20px;
-    font-size:10px;
-}
-
-.verification-box{
+.info{
     margin:12px 14px;
     padding:16px;
     background:#131a24;
@@ -331,20 +296,20 @@ h1{
     border-radius:15px;
 }
 
-.verification-box .title{
+.info-title{
     color:#94a3b8;
     font-size:12px;
     font-weight:600;
     margin-bottom:6px;
 }
 
-.verification-box .message{
+.info-text{
     color:#e2e8f0;
     font-size:14px;
     line-height:1.5;
 }
 
-.player-footer{
+.footer-player{
     text-align:center;
     color:#475569;
     font-size:10px;
@@ -353,7 +318,7 @@ h1{
     margin:10px 14px 0;
 }
 
-.btn-back{
+.back{
     display:block;
     margin:auto;
     padding:13px;
@@ -374,7 +339,7 @@ h1{
         font-size:25px;
     }
 
-    .play-icon-wrapper i{
+    .play-icon i{
         font-size:55px;
     }
 
@@ -382,41 +347,27 @@ h1{
         font-size:16px;
     }
 
-    .video-overlay i{
+    .overlay i{
         font-size:50px;
     }
 }
-
 </style>
 </head>
 
 <body>
 
-
-<!-- =====================================================
-     LANDING PAGE
-===================================================== -->
-
-<div id="page-landing">
+<!-- LANDING PAGE -->
+<section id="landing">
 
     <div class="card">
 
-        <div
-            class="play-icon-wrapper"
-            id="playIcon">
-
+        <div class="play-icon" id="playIcon">
             <i class="fas fa-play-circle"></i>
-
         </div>
 
+        <h1>Watch Full HD Video</h1>
 
-        <h1>
-            Watch Full HD Video
-        </h1>
-
-
-        <div class="quality-box">
-
+        <div class="quality">
             <i class="fas fa-hdd"></i>
 
             <span>
@@ -426,36 +377,25 @@ h1{
             </span>
 
             <i class="fas fa-check-circle check"></i>
-
         </div>
-
 
         <div class="desc">
             Click the button below to start streaming.
         </div>
 
-
-        <button
-            class="btn-primary"
-            id="btnContinue">
-
-            <span>
-                Continue Watching
-            </span>
-
+        <button class="btn-primary" id="continueBtn">
+            Continue Watching
             <i class="fas fa-arrow-right"></i>
-
         </button>
 
+        <div class="footer">
 
-        <div class="footer-badges">
-
-            <span class="footer-item">
+            <span>
                 <i class="fas fa-shield-alt"></i>
-                Secure & Verified
+                Secure
             </span>
 
-            <span class="footer-item">
+            <span>
                 <i class="fas fa-bolt"></i>
                 Fast Streaming
             </span>
@@ -464,143 +404,50 @@ h1{
 
     </div>
 
-</div>
+</section>
 
 
-<!-- =====================================================
-     PLAYER
-===================================================== -->
+<!-- PLAYER PAGE -->
+<section id="playerPage">
 
-<div id="page-player">
+    <div class="player">
 
-    <div class="player-card">
-
-
-        <div class="player-header">
+        <div class="header">
 
             <span class="brand">
                 VIDEOPLAYER
             </span>
 
-            <span class="badge-4k">
-                4K ULTRA HD
+            <span class="badge">
+                FULL HD
             </span>
 
-            <span
-                class="video-counter"
-                id="videoCounter">
+            <span class="counter" id="counter">
                 1 / 6
             </span>
 
         </div>
 
 
-        <div class="video-wrapper">
+        <div class="video-container">
 
-            <div class="video-container">
+            <video
+                id="video"
+                playsinline
+                preload="metadata">
 
-                <video
-                    id="mainVideo"
-                    playsinline
-                    preload="metadata">
+                <source id="source" src="" type="video/mp4">
 
-                    <source
-                        src=""
-                        type="video/mp4">
-
-                    Browser kamu tidak mendukung video.
-
-                </video>
+                Browser kamu tidak mendukung video.
+            </video>
 
 
-                <div
-                    class="video-overlay"
-                    id="videoOverlay">
+            <div class="overlay" id="overlay">
 
-                    <i class="fas fa-play-circle"></i>
+                <i class="fas fa-play-circle"></i>
 
-                    <span class="play-text">
-                        ▶ Click to Play
-                    </span>
-
-                </div>
-
-
-                <div class="auto-rotate-badge">
-
-                    <i class="fas fa-sync-alt fa-spin"></i>
-
-                    Auto-rotate
-
-                </div>
-
-            </div>
-
-
-            <div class="video-controls">
-
-                <button id="playPauseBtn">
-                    <i class="fas fa-play"></i>
-                </button>
-
-
-                <div class="progress-container">
-
-                    <div
-                        class="progress-bar"
-                        id="progressBar">
-
-                        <div
-                            class="progress-fill"
-                            id="progressFill">
-                        </div>
-
-                    </div>
-
-
-                    <span
-                        class="time-display"
-                        id="timeDisplay">
-
-                        00:00 / 00:00
-
-                    </span>
-
-                </div>
-
-
-                <div class="volume-control">
-
-                    <button id="muteBtn">
-
-                        <i class="fas fa-volume-up"></i>
-
-                    </button>
-
-
-                    <input
-                        type="range"
-                        id="volumeSlider"
-                        min="0"
-                        max="1"
-                        step="0.05"
-                        value="0.8">
-
-                </div>
-
-
-                <button
-                    class="btn-next"
-                    id="btnNext">
-
-                    <i class="fas fa-forward"></i>
-                    Next
-
-                </button>
-
-
-                <span class="quality-badge">
-                    HD
+                <span class="play-text">
+                    ▶ Click to Play
                 </span>
 
             </div>
@@ -608,59 +455,86 @@ h1{
         </div>
 
 
-        <div
-            class="verification-box"
-            id="verificationBox">
+        <div class="controls">
 
-            <div class="title">
+            <button id="playPause" title="Play/Pause">
+                <i class="fas fa-play"></i>
+            </button>
+
+            <div class="progress-container">
+
+                <div class="progress" id="progress">
+
+                    <div class="fill" id="fill"></div>
+
+                </div>
+
+                <span class="time" id="time">
+                    00:00 / 00:00
+                </span>
+
+            </div>
+
+            <div class="volume">
+
+                <button id="mute">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+
+                <input
+                    id="volume"
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.05"
+                    value="0.8">
+
+            </div>
+
+            <button class="next" id="next">
+                <i class="fas fa-forward"></i>
+                Next
+            </button>
+
+        </div>
+
+
+        <div class="info">
+
+            <div class="info-title">
                 PLAYBACK
             </div>
 
-            <div class="message">
-                Please click the player above to start the video.
+            <div class="info-text">
+                Video siap diputar. Gunakan kontrol player
+                untuk Play, Pause, Volume, dan Next Video.
             </div>
 
         </div>
 
 
-        <div class="player-footer">
-            Videoplayer. All rights reserved.
+        <div class="footer-player">
+            Video Player
         </div>
 
 
-        <button
-            class="btn-back"
-            id="btnBack">
-
+        <button class="back" id="back">
             ← Back to home
-
         </button>
 
     </div>
 
-</div>
+</section>
 
 
 <script>
 
-(function(){
-
 "use strict";
 
 
-/* =====================================================
-   MONETAG DIRECT LINK
-===================================================== */
+/* ================= VIDEO ================= */
 
-const MONETAG_DIRECTLINK =
-"https://omg10.com/4/11649845";
-
-
-/* =====================================================
-   VIDEO LIST
-===================================================== */
-
-const VIDEO_LIST = [
+const VIDEOS = [
 
     {
         title:"Big Buck Bunny",
@@ -683,7 +557,7 @@ const VIDEO_LIST = [
     },
 
     {
-        title:"Doggy Style",
+        title:"Video 5",
         src:"https://cdn2.aceimg.com/AMI8zc8Bi.mp4"
     },
 
@@ -695,326 +569,147 @@ const VIDEO_LIST = [
 ];
 
 
-/* =====================================================
-   ELEMENTS
-===================================================== */
+/* ================= ELEMENT ================= */
 
 const landing =
-document.getElementById("page-landing");
+document.getElementById("landing");
 
-const player =
-document.getElementById("page-player");
+const playerPage =
+document.getElementById("playerPage");
 
-const btnContinue =
-document.getElementById("btnContinue");
+const continueBtn =
+document.getElementById("continueBtn");
 
 const playIcon =
 document.getElementById("playIcon");
 
-const btnBack =
-document.getElementById("btnBack");
+const back =
+document.getElementById("back");
 
 const video =
-document.getElementById("mainVideo");
+document.getElementById("video");
 
-const videoOverlay =
-document.getElementById("videoOverlay");
+const source =
+document.getElementById("source");
 
-const videoCounter =
-document.getElementById("videoCounter");
+const overlay =
+document.getElementById("overlay");
 
-const playPauseBtn =
-document.getElementById("playPauseBtn");
+const playPause =
+document.getElementById("playPause");
 
-const progressBar =
-document.getElementById("progressBar");
+const progress =
+document.getElementById("progress");
 
-const progressFill =
-document.getElementById("progressFill");
+const fill =
+document.getElementById("fill");
 
-const timeDisplay =
-document.getElementById("timeDisplay");
+const time =
+document.getElementById("time");
 
-const muteBtn =
-document.getElementById("muteBtn");
+const mute =
+document.getElementById("mute");
 
-const volumeSlider =
-document.getElementById("volumeSlider");
+const volume =
+document.getElementById("volume");
 
-const btnNext =
-document.getElementById("btnNext");
+const next =
+document.getElementById("next");
 
-
-/* =====================================================
-   VIDEO STORAGE
-===================================================== */
-
-const STORAGE_KEY =
-"lastVideoIndex_monetag";
+const counter =
+document.getElementById("counter");
 
 
-function getSavedIndex(){
-
-    try{
-
-        const saved =
-        localStorage.getItem(STORAGE_KEY);
-
-        const index =
-        parseInt(saved,10);
-
-        if(
-            !isNaN(index) &&
-            index >= 0 &&
-            index < VIDEO_LIST.length
-        ){
-
-            return index;
-
-        }
-
-    }catch(e){}
-
-    return 0;
-}
+let current = 0;
 
 
-function saveIndex(index){
-
-    try{
-
-        localStorage.setItem(
-            STORAGE_KEY,
-            String(index)
-        );
-
-    }catch(e){}
-
-}
-
-
-let currentIndex = 0;
-
-
-/* =====================================================
-   LOAD VIDEO
-===================================================== */
+/* ================= LOAD ================= */
 
 function loadVideo(index){
 
-    if(!VIDEO_LIST[index]){
-        return;
-    }
+    if(!VIDEOS[index]) return;
 
-    currentIndex = index;
+    current = index;
 
-    const source =
-    video.querySelector("source");
-
-    source.src =
-    VIDEO_LIST[index].src;
+    source.src = VIDEOS[index].src;
 
     video.load();
 
-    videoCounter.textContent =
-    (index + 1) +
-    " / " +
-    VIDEO_LIST.length;
+    counter.textContent =
+        (index + 1) +
+        " / " +
+        VIDEOS.length;
 
-    progressFill.style.width =
-    "0%";
+    fill.style.width = "0%";
 
-    timeDisplay.textContent =
-    "00:00 / 00:00";
+    time.textContent =
+        "00:00 / 00:00";
 
-    videoOverlay.classList.remove(
-        "hidden"
-    );
+    overlay.classList.remove("hidden");
 
-    playPauseBtn.innerHTML =
-    '<i class="fas fa-play"></i>';
-
-    saveIndex(index);
-
+    playPause.innerHTML =
+        '<i class="fas fa-play"></i>';
 }
 
 
-/* =====================================================
-   OPEN MONETAG DIRECT LINK
-===================================================== */
-
-function openMonetagDirectLink(){
-
-    /*
-       Direct Link hanya dibuka sebagai
-       hasil tindakan pengguna.
-    */
-
-    window.open(
-        MONETAG_DIRECTLINK,
-        "_blank",
-        "noopener,noreferrer"
-    );
-
-}
-
-
-/* =====================================================
-   SHOW PLAYER
-===================================================== */
+/* ================= PLAYER ================= */
 
 function showPlayer(){
 
-    landing.style.display =
-    "none";
+    landing.style.display = "none";
 
-    player.style.display =
-    "block";
+    playerPage.style.display = "block";
 
     document.body.style.background =
-    "#0b0d10";
+        "#0b0d10";
 
-    const saved =
-    getSavedIndex();
-
-    const next =
-    (saved + 1) %
-    VIDEO_LIST.length;
-
-    loadVideo(next);
+    loadVideo(0);
 
     window.scrollTo(0,0);
-
 }
 
-
-/* =====================================================
-   SHOW LANDING
-===================================================== */
 
 function showLanding(){
 
-    player.style.display =
-    "none";
-
-    landing.style.display =
-    "flex";
-
-    document.body.style.background =
-    "#fff";
-
     video.pause();
 
+    playerPage.style.display = "none";
+
+    landing.style.display = "flex";
+
+    document.body.style.background =
+        "#fff";
 }
 
 
-/* =====================================================
-   CONTINUE
-===================================================== */
+/* ================= BUTTON ================= */
 
-btnContinue.addEventListener(
+continueBtn.addEventListener(
     "click",
-    function(){
-
-        /*
-           Monetag Direct Link
-           hanya dari klik pengguna.
-        */
-
-        openMonetagDirectLink();
-
-        /*
-           Player tetap dibuka di halaman
-           setelah aksi pengguna.
-        */
-
-        setTimeout(
-            function(){
-
-                showPlayer();
-
-            },
-            400
-        );
-
-    }
+    showPlayer
 );
-
-
-/* =====================================================
-   PLAY ICON
-===================================================== */
 
 playIcon.addEventListener(
     "click",
-    function(){
-
-        openMonetagDirectLink();
-
-        setTimeout(
-            function(){
-
-                showPlayer();
-
-            },
-            400
-        );
-
-    }
+    showPlayer
 );
 
-
-/* =====================================================
-   BACK
-===================================================== */
-
-btnBack.addEventListener(
+back.addEventListener(
     "click",
-    function(){
-
-        showLanding();
-
-    }
+    showLanding
 );
 
 
-/* =====================================================
-   NEXT VIDEO
-===================================================== */
-
-btnNext.addEventListener(
-    "click",
-    function(e){
-
-        e.stopPropagation();
-
-        const next =
-        (currentIndex + 1) %
-        VIDEO_LIST.length;
-
-        loadVideo(next);
-
-    }
-);
-
-
-/* =====================================================
-   PLAY / PAUSE
-===================================================== */
+/* ================= PLAY ================= */
 
 function playVideo(){
 
-    video.play().catch(
-        function(){}
-    );
+    video.play().catch(function(){});
 
-    videoOverlay.classList.add(
-        "hidden"
-    );
+    overlay.classList.add("hidden");
 
-    playPauseBtn.innerHTML =
-    '<i class="fas fa-pause"></i>';
-
+    playPause.innerHTML =
+        '<i class="fas fa-pause"></i>';
 }
 
 
@@ -1022,13 +717,10 @@ function pauseVideo(){
 
     video.pause();
 
-    videoOverlay.classList.remove(
-        "hidden"
-    );
+    overlay.classList.remove("hidden");
 
-    playPauseBtn.innerHTML =
-    '<i class="fas fa-play"></i>';
-
+    playPause.innerHTML =
+        '<i class="fas fa-play"></i>';
 }
 
 
@@ -1043,18 +735,16 @@ function togglePlay(){
         pauseVideo();
 
     }
-
 }
 
 
-playPauseBtn.addEventListener(
+playPause.addEventListener(
     "click",
     function(e){
 
         e.stopPropagation();
 
         togglePlay();
-
     }
 );
 
@@ -1065,33 +755,45 @@ video.addEventListener(
 );
 
 
-videoOverlay.addEventListener(
+overlay.addEventListener(
     "click",
     playVideo
 );
 
 
-/* =====================================================
-   AUTO NEXT
-===================================================== */
+/* ================= NEXT ================= */
+
+next.addEventListener(
+    "click",
+    function(){
+
+        current++;
+
+        if(current >= VIDEOS.length){
+            current = 0;
+        }
+
+        loadVideo(current);
+    }
+);
+
 
 video.addEventListener(
     "ended",
     function(){
 
-        const next =
-        (currentIndex + 1) %
-        VIDEO_LIST.length;
+        current++;
 
-        loadVideo(next);
+        if(current >= VIDEOS.length){
+            current = 0;
+        }
 
+        loadVideo(current);
     }
 );
 
 
-/* =====================================================
-   PROGRESS
-===================================================== */
+/* ================= PROGRESS ================= */
 
 video.addEventListener(
     "timeupdate",
@@ -1102,28 +804,25 @@ video.addEventListener(
             isFinite(video.duration)
         ){
 
-            const percent =
-            (video.currentTime /
-             video.duration) * 100;
-
-            progressFill.style.width =
-            percent + "%";
-
+            fill.style.width =
+                (
+                    video.currentTime /
+                    video.duration *
+                    100
+                ) + "%";
         }
 
         updateTime();
-
     }
 );
 
 
 function updateTime(){
 
-    timeDisplay.textContent =
-    formatTime(video.currentTime) +
-    " / " +
-    formatTime(video.duration);
-
+    time.textContent =
+        formatTime(video.currentTime) +
+        " / " +
+        formatTime(video.duration);
 }
 
 
@@ -1135,83 +834,72 @@ function formatTime(seconds){
     ){
 
         return "00:00";
-
     }
 
     const minutes =
-    Math.floor(seconds / 60);
+        Math.floor(seconds / 60);
 
-    const secs =
-    Math.floor(seconds % 60);
+    const secondsPart =
+        Math.floor(seconds % 60);
 
-    return(
+    return (
         String(minutes).padStart(2,"0") +
         ":" +
-        String(secs).padStart(2,"0")
+        String(secondsPart).padStart(2,"0")
     );
-
 }
 
 
-progressBar.addEventListener(
+progress.addEventListener(
     "click",
     function(e){
 
         if(
             !video.duration ||
             !isFinite(video.duration)
-        ){
-
-            return;
-
-        }
+        ) return;
 
         const rect =
-        progressBar.getBoundingClientRect();
+            progress.getBoundingClientRect();
 
         let percent =
-        (e.clientX - rect.left) /
-        rect.width;
+            (e.clientX - rect.left) /
+            rect.width;
 
         percent =
-        Math.max(
-            0,
-            Math.min(1,percent)
-        );
+            Math.max(
+                0,
+                Math.min(1,percent)
+            );
 
         video.currentTime =
-        percent * video.duration;
-
+            percent * video.duration;
     }
 );
 
 
-/* =====================================================
-   VOLUME
-===================================================== */
+/* ================= VOLUME ================= */
 
-volumeSlider.addEventListener(
+volume.addEventListener(
     "input",
     function(){
 
         video.volume =
-        Number(this.value);
+            Number(this.value);
 
         updateMuteIcon();
-
     }
 );
 
 
-muteBtn.addEventListener(
+mute.addEventListener(
     "click",
     function(){
 
         video.muted =
-        !video.muted;
+            !video.muted;
 
         updateMuteIcon();
-
     }
 );
 
@@ -1223,39 +911,31 @@ function updateMuteIcon(){
         video.volume === 0
     ){
 
-        muteBtn.innerHTML =
-        '<i class="fas fa-volume-mute"></i>';
+        mute.innerHTML =
+            '<i class="fas fa-volume-mute"></i>';
 
     }else if(
-        video.volume < .5
+        video.volume < 0.5
     ){
 
-        muteBtn.innerHTML =
-        '<i class="fas fa-volume-down"></i>';
+        mute.innerHTML =
+            '<i class="fas fa-volume-down"></i>';
 
     }else{
 
-        muteBtn.innerHTML =
-        '<i class="fas fa-volume-up"></i>';
-
+        mute.innerHTML =
+            '<i class="fas fa-volume-up"></i>';
     }
-
 }
 
 
-/* =====================================================
-   INITIALIZE
-===================================================== */
+/* ================= INITIAL ================= */
 
-video.volume =
-0.8;
+video.volume = 0.8;
 
-volumeSlider.value =
-0.8;
+volume.value = 0.8;
 
 showLanding();
-
-})();
 
 </script>
 
