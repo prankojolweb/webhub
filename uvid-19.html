@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Watch Full HD Video</title>
 
@@ -14,13 +14,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.mi
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif
 }
 
 body{
     min-height:100vh;
-    background:#fff;
-    transition:.25s
+    background:#fff
 }
 
 /* ================= LANDING ================= */
@@ -33,67 +32,65 @@ body{
 }
 
 .card{
-    width:100%;
     background:#fff;
+    border:1px solid #eee;
     border-radius:28px;
-    padding:34px 22px 28px;
-    box-shadow:0 8px 30px rgba(0,0,0,.08);
+    padding:32px 20px 26px;
     text-align:center;
-    border:1px solid #eee
+    box-shadow:0 8px 30px rgba(0,0,0,.08)
 }
 
 .play-icon-wrapper{
-    display:inline-flex;
+    width:88px;
+    height:88px;
+    margin:0 auto 15px;
+    border-radius:50%;
+    display:flex;
     align-items:center;
     justify-content:center;
-    width:86px;
-    height:86px;
-    margin-bottom:12px;
-    cursor:pointer;
-    border-radius:50%;
     background:#1e293b;
-    box-shadow:0 8px 22px rgba(30,41,59,.25);
-    animation:pulse 1.8s infinite
+    cursor:pointer;
+    animation:pulse 1.7s infinite
 }
 
 .play-icon-wrapper i{
-    font-size:48px;
     color:#fff;
-    margin-left:4px
+    font-size:48px;
+    margin-left:5px
 }
 
 @keyframes pulse{
     0%,100%{transform:scale(1)}
-    50%{transform:scale(1.06)}
+    50%{transform:scale(1.07)}
 }
 
 h1{
-    font-size:29px;
-    font-weight:750;
+    font-size:28px;
     color:#0b0d10;
-    margin-bottom:18px
+    margin-bottom:16px
 }
 
 .quality-box{
-    background:#f5f7fa;
-    border:1px solid #e5e7eb;
-    border-radius:30px;
-    padding:11px 14px;
     display:flex;
     align-items:center;
     justify-content:center;
+    flex-wrap:wrap;
     gap:7px;
-    margin-bottom:16px;
-    flex-wrap:wrap
+    padding:11px 13px;
+    margin-bottom:15px;
+    border-radius:30px;
+    background:#f5f7fa;
+    border:1px solid #e5e7eb;
+    color:#1e293b;
+    font-size:14px
 }
 
 .quality-box i{
     color:#2563eb
 }
 
-.quality-box span{
-    color:#1e293b;
-    font-size:14px
+.quality-box .check{
+    color:#16a34a
 }
 
 .quality-box strong{
@@ -102,32 +99,23 @@ h1{
     border-radius:20px
 }
 
-.quality-box .check{
-    color:#16a34a
-}
-
 .desc{
     color:#475569;
     font-size:15px;
-    line-height:1.55;
-    margin-bottom:20px
+    margin-bottom:18px;
+    line-height:1.5
 }
 
 .btn-primary{
     width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    padding:17px 20px;
+    padding:17px;
     border:0;
     border-radius:50px;
     background:#1e293b;
     color:#fff;
     font-size:18px;
     font-weight:700;
-    cursor:pointer;
-    box-shadow:0 8px 20px rgba(30,41,59,.2)
+    cursor:pointer
 }
 
 .btn-primary:active{
@@ -135,7 +123,7 @@ h1{
 }
 
 .cta-note{
-    margin-top:10px;
+    margin-top:9px;
     color:#64748b;
     font-size:12px
 }
@@ -144,10 +132,10 @@ h1{
     display:flex;
     justify-content:center;
     gap:18px;
-    padding-top:18px;
+    flex-wrap:wrap;
     margin-top:22px;
-    border-top:1px solid #eceff3;
-    flex-wrap:wrap
+    padding-top:17px;
+    border-top:1px solid #eee
 }
 
 .footer-item{
@@ -172,15 +160,15 @@ h1{
 .player-card{
     width:100%;
     background:#0b0d10;
-    padding:10px 0 22px
+    padding-bottom:24px
 }
 
 .player-header{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:7px;
-    padding:0 14px 11px;
+    gap:6px;
+    padding:11px 13px;
     border-bottom:1px solid #1e293b
 }
 
@@ -193,25 +181,23 @@ h1{
 
 .badge-4k{
     background:#f59e0b;
-    color:#0b0d10;
-    font-size:10px;
-    font-weight:800;
+    color:#111827;
     padding:4px 10px;
-    border-radius:20px
+    border-radius:20px;
+    font-size:10px;
+    font-weight:800
 }
 
 .video-counter{
     color:#cbd5e1;
-    font-size:10px;
     background:#1e293b;
-    padding:4px 10px;
-    border-radius:20px
+    padding:4px 9px;
+    border-radius:20px;
+    font-size:10px
 }
 
 .video-wrapper{
-    background:#070a0f;
-    overflow:hidden;
-    margin-bottom:10px
+    background:#070a0f
 }
 
 .video-container{
@@ -238,10 +224,9 @@ h1{
     display:flex;
     align-items:center;
     justify-content:center;
-    background:rgba(0,0,0,.34);
+    background:rgba(0,0,0,.38);
     cursor:pointer;
-    z-index:10;
-    transition:.2s
+    z-index:10
 }
 
 .video-overlay.hidden{
@@ -250,7 +235,7 @@ h1{
 }
 
 .video-overlay i{
-    font-size:65px;
+    font-size:64px;
     color:#fff
 }
 
@@ -258,47 +243,45 @@ h1{
     position:absolute;
     bottom:19%;
     color:#fff;
-    font-size:13px;
-    opacity:.8
+    font-size:13px
 }
 
 .auto-rotate-badge{
     position:absolute;
-    bottom:12px;
-    right:12px;
-    background:rgba(0,0,0,.72);
+    right:10px;
+    bottom:10px;
+    z-index:5;
+    background:rgba(0,0,0,.7);
     color:#cbd5e1;
-    font-size:9px;
     padding:4px 9px;
     border-radius:20px;
-    z-index:5
+    font-size:9px
 }
 
 .video-controls{
     display:flex;
     align-items:center;
-    gap:8px;
-    padding:9px 12px 11px;
-    background:#0b0d10;
+    gap:7px;
+    flex-wrap:wrap;
+    padding:10px 12px;
     border-top:1px solid #1e293b;
-    flex-wrap:wrap
+    background:#0b0d10
 }
 
 .video-controls button{
-    background:none;
     border:0;
+    background:none;
     color:#e2e8f0;
-    font-size:15px;
     cursor:pointer;
-    padding:5px 6px
+    padding:5px
 }
 
 .progress-container{
     flex:1;
+    min-width:105px;
     display:flex;
     align-items:center;
-    gap:8px;
-    min-width:110px
+    gap:7px
 }
 
 .progress-bar{
@@ -306,21 +289,20 @@ h1{
     height:5px;
     background:#1e293b;
     border-radius:10px;
-    cursor:pointer;
-    overflow:hidden
+    overflow:hidden;
+    cursor:pointer
 }
 
 .progress-bar .fill{
     width:0;
     height:100%;
-    background:#2563eb;
-    border-radius:10px
+    background:#2563eb
 }
 
 .time-display{
+    min-width:72px;
     color:#cbd5e1;
-    font-size:11px;
-    min-width:76px;
+    font-size:10px;
     text-align:center
 }
 
@@ -330,35 +312,28 @@ h1{
 }
 
 .volume-control input{
-    width:45px
+    width:42px
 }
 
 .btn-next{
     background:#2563eb!important;
     border-radius:25px!important;
-    padding:7px 13px!important;
+    padding:8px 14px!important;
+    color:#fff!important;
     font-weight:700
 }
 
-.quality-badge{
-    color:#94a3b8;
-    font-size:10px;
-    background:#1e293b;
-    padding:4px 8px;
-    border-radius:20px
-}
-
 .verification-box{
+    margin:12px 13px;
+    padding:15px;
+    border:1px solid #1e293b;
     background:#131a24;
-    border-radius:15px;
-    padding:16px;
-    margin:12px 14px 10px;
-    border:1px solid #1e293b
+    border-radius:15px
 }
 
 .verification-box .title{
     color:#94a3b8;
-    font-size:12px;
+    font-size:11px;
     font-weight:700;
     margin-bottom:5px
 }
@@ -371,11 +346,11 @@ h1{
 
 .after-video{
     display:none;
-    margin:12px 14px;
-    padding:15px;
+    margin:12px 13px;
+    padding:17px;
     background:#172033;
     border:1px solid #263550;
-    border-radius:16px;
+    border-radius:17px;
     text-align:center
 }
 
@@ -383,70 +358,232 @@ h1{
     display:block
 }
 
+.after-video h3{
+    color:#fff;
+    font-size:17px;
+    margin-bottom:7px
+}
+
 .after-video p{
-    color:#cbd5e1;
+    color:#94a3b8;
     font-size:13px;
-    margin-bottom:10px
+    margin-bottom:12px
 }
 
 .after-video button{
     width:100%;
-    padding:12px;
+    padding:13px;
     border:0;
     border-radius:30px;
     background:#2563eb;
     color:#fff;
     font-size:15px;
+    font-weight:700
+}
+
+/* ================= VIDEO LIST ================= */
+
+.video-list{
+    margin:14px 13px
+}
+
+.video-list-title{
+    color:#94a3b8;
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:8px
+}
+
+.video-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    width:100%;
+    padding:11px;
+    margin-bottom:7px;
+    border:1px solid #1e293b;
+    border-radius:13px;
+    background:#111827;
+    cursor:pointer
+}
+
+.video-item.active{
+    border-color:#2563eb
+}
+
+.video-item-icon{
+    width:38px;
+    height:38px;
+    flex:none;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#1e293b;
+    color:#fff
+}
+
+.video-item-info{
+    flex:1;
+    text-align:left
+}
+
+.video-item-info strong{
+    display:block;
+    color:#e2e8f0;
+    font-size:13px
+}
+
+.video-item-info span{
+    color:#64748b;
+    font-size:10px
+}
+
+.video-item-arrow{
+    color:#64748b
+}
+
+/* ================= AGE MODAL ================= */
+
+.age-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(0,0,0,.78)
+}
+
+.age-modal.show{
+    display:flex
+}
+
+.age-box{
+    width:100%;
+    max-width:390px;
+    padding:25px 20px;
+    border-radius:22px;
+    background:#fff;
+    text-align:center;
+    box-shadow:0 15px 50px rgba(0,0,0,.35)
+}
+
+.age-icon{
+    width:62px;
+    height:62px;
+    margin:0 auto 13px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fee2e2;
+    color:#dc2626;
+    font-size:27px
+}
+
+.age-box h2{
+    color:#111827;
+    font-size:22px;
+    margin-bottom:9px
+}
+
+.age-box p{
+    color:#4b5563;
+    font-size:14px;
+    line-height:1.5;
+    margin-bottom:17px
+}
+
+.age-actions{
+    display:flex;
+    flex-direction:column;
+    gap:9px
+}
+
+.age-confirm,
+.age-smartlink{
+    width:100%;
+    border:0;
+    border-radius:30px;
+    padding:13px;
+    font-size:15px;
     font-weight:700;
     cursor:pointer
+}
+
+.age-confirm{
+    background:#1e293b;
+    color:#fff
+}
+
+.age-smartlink{
+    background:#eff6ff;
+    color:#1d4ed8;
+    border:1px solid #2563eb
+}
+
+.age-cancel{
+    width:100%;
+    border:0;
+    background:transparent;
+    color:#64748b;
+    padding:9px;
+    cursor:pointer
+}
+
+.age-note{
+    color:#9ca3af;
+    font-size:10px;
+    margin-top:12px
 }
 
 .player-footer{
     color:#475569;
     font-size:10px;
     text-align:center;
-    padding:12px 14px 0;
-    border-top:1px solid #1e293b;
-    margin:10px 14px 0
+    margin:12px 13px;
+    padding-top:12px;
+    border-top:1px solid #1e293b
 }
 
 .btn-back{
     display:block;
     margin:auto;
-    padding:13px 0 3px;
-    background:transparent;
+    background:none;
     border:0;
     color:#64748b;
-    cursor:pointer
+    padding:12px
 }
 
 @media(max-width:480px){
-    .card{
-        padding:28px 16px 24px;
-        border-radius:24px
-    }
 
-    h1{
-        font-size:26px
-    }
+.card{
+    padding:27px 16px 23px
+}
 
-    .play-icon-wrapper{
-        width:76px;
-        height:76px
-    }
+h1{
+    font-size:25px
+}
 
-    .play-icon-wrapper i{
-        font-size:42px
-    }
+.play-icon-wrapper{
+    width:78px;
+    height:78px
+}
 
-    .btn-primary{
-        font-size:17px;
-        padding:16px
-    }
+.play-icon-wrapper i{
+    font-size:42px
+}
 
-    .video-overlay i{
-        font-size:52px
-    }
+.btn-primary{
+    font-size:17px
+}
+
+.video-overlay i{
+    font-size:52px
+}
+
 }
 </style>
 </head>
@@ -467,9 +604,11 @@ h1{
 
 <div class="quality-box">
 <i class="fas fa-hdd"></i>
+
 <span>
-High-definition <strong>1080p</strong> Quality detected.
+High-definition <strong>1080p</strong> Quality detected
 </span>
+
 <i class="fas fa-check-circle check"></i>
 </div>
 
@@ -512,9 +651,7 @@ Fast Streaming
 
 <div class="player-header">
 
-<span class="brand">
-VIDEOPLAYER
-</span>
+<span class="brand">VIDEOPLAYER</span>
 
 <span class="badge-4k">
 4K ULTRA HD
@@ -526,13 +663,17 @@ VIDEOPLAYER
 
 </div>
 
+
 <div class="video-wrapper">
 
 <div class="video-container">
 
 <video id="mainVideo" playsinline preload="metadata">
+
 <source src="" type="video/mp4">
+
 Your browser does not support video.
+
 </video>
 
 <div class="video-overlay" id="videoOverlay">
@@ -546,7 +687,7 @@ Your browser does not support video.
 </div>
 
 <div class="auto-rotate-badge">
-<i class="fas fa-sync-alt fa-spin"></i>
+<i class="fas fa-sync-alt"></i>
 Auto-rotate
 </div>
 
@@ -592,11 +733,8 @@ value="0.8">
 Next
 </button>
 
-<span class="quality-badge">
-85%
-</span>
-
 </div>
+
 </div>
 
 
@@ -613,18 +751,29 @@ Please click the player above to start the video.
 </div>
 
 
-<!-- CTA SETELAH VIDEO -->
-
 <div class="after-video" id="afterVideo">
 
+<h3>Video selesai</h3>
+
 <p>
-Video selesai. Lanjutkan ke video berikutnya.
+Lanjutkan ke video berikutnya untuk menonton lebih banyak.
 </p>
 
 <button id="afterNext">
 <i class="fas fa-play"></i>
 &nbsp; Watch Next Video
 </button>
+
+</div>
+
+
+<div class="video-list">
+
+<div class="video-list-title">
+MORE VIDEOS
+</div>
+
+<div id="videoListContainer"></div>
 
 </div>
 
@@ -638,6 +787,56 @@ Videoplayer. All rights reserved.
 </button>
 
 </div>
+</div>
+
+
+<!-- ================= AGE MODAL ================= -->
+
+<div class="age-modal" id="ageModal">
+
+<div class="age-box">
+
+<div class="age-icon">
+<i class="fas fa-exclamation"></i>
+</div>
+
+<h2>18+ Content</h2>
+
+<p>
+This section may contain adult-oriented material.
+Please confirm that you are 18 years old or older before continuing.
+</p>
+
+<div class="age-actions">
+
+<!-- BUTTON 1: SMARTLINK + VIDEO -->
+
+<button class="age-confirm" id="ageConfirm">
+<i class="fas fa-check"></i>
+&nbsp;
+I am 18+ — Continue
+</button>
+
+<!-- BUTTON 2: SMARTLINK -->
+
+<button class="age-smartlink" id="ageSmartlink">
+<i class="fas fa-external-link-alt"></i>
+&nbsp;
+Continue via External Link
+</button>
+
+<button class="age-cancel" id="ageCancel">
+Cancel
+</button>
+
+</div>
+
+<div class="age-note">
+External links may open in a new tab.
+</div>
+
+</div>
+
 </div>
 
 
@@ -698,49 +897,103 @@ src:"https://cdn2.aceimg.com/30AtFg57J.mp4"
 
 /* ================= ELEMENTS ================= */
 
-const landing=document.getElementById("page-landing");
-const player=document.getElementById("page-player");
+const landing=
+document.getElementById("page-landing");
 
-const btnContinue=document.getElementById("btnContinue");
-const playIcon=document.getElementById("playIcon");
-const btnBack=document.getElementById("btnBack");
+const player=
+document.getElementById("page-player");
 
-const video=document.getElementById("mainVideo");
-const videoOverlay=document.getElementById("videoOverlay");
+const btnContinue=
+document.getElementById("btnContinue");
 
-const videoCounter=document.getElementById("videoCounter");
-const playPauseBtn=document.getElementById("playPauseBtn");
+const playIcon=
+document.getElementById("playIcon");
 
-const progressBar=document.getElementById("progressBar");
-const progressFill=document.getElementById("progressFill");
-const timeDisplay=document.getElementById("timeDisplay");
+const btnBack=
+document.getElementById("btnBack");
 
-const muteBtn=document.getElementById("muteBtn");
-const volumeSlider=document.getElementById("volumeSlider");
+const video=
+document.getElementById("mainVideo");
 
-const verificationBox=document.getElementById("verificationBox");
+const videoOverlay=
+document.getElementById("videoOverlay");
 
-const btnNext=document.getElementById("btnNext");
-const afterVideo=document.getElementById("afterVideo");
-const afterNext=document.getElementById("afterNext");
+const videoCounter=
+document.getElementById("videoCounter");
+
+const playPauseBtn=
+document.getElementById("playPauseBtn");
+
+const progressBar=
+document.getElementById("progressBar");
+
+const progressFill=
+document.getElementById("progressFill");
+
+const timeDisplay=
+document.getElementById("timeDisplay");
+
+const muteBtn=
+document.getElementById("muteBtn");
+
+const volumeSlider=
+document.getElementById("volumeSlider");
+
+const btnNext=
+document.getElementById("btnNext");
+
+const verificationBox=
+document.getElementById("verificationBox");
+
+const afterVideo=
+document.getElementById("afterVideo");
+
+const afterNext=
+document.getElementById("afterNext");
+
+const videoListContainer=
+document.getElementById("videoListContainer");
+
+
+/* AGE */
+
+const ageModal=
+document.getElementById("ageModal");
+
+const ageConfirm=
+document.getElementById("ageConfirm");
+
+const ageSmartlink=
+document.getElementById("ageSmartlink");
+
+const ageCancel=
+document.getElementById("ageCancel");
 
 
 /* ================= STORAGE ================= */
 
-const STORAGE_KEY="video_player_index";
+const STORAGE_KEY=
+"video_index_18plus";
+
+let currentIndex=0;
+let pendingVideoIndex=null;
+
 
 function saveIndex(index){
 
 try{
+
 localStorage.setItem(
 STORAGE_KEY,
 String(index)
 );
+
 }catch(e){}
 
 }
 
-function getIndex(){
+
+function getSavedIndex(){
 
 try{
 
@@ -755,7 +1008,9 @@ if(
 value>=0 &&
 value<VIDEO_LIST.length
 ){
+
 return value;
+
 }
 
 }catch(e){}
@@ -765,9 +1020,167 @@ return 0;
 }
 
 
-/* ================= LOAD VIDEO ================= */
+/* ================= SMARTLINK ================= */
 
-let currentIndex=0;
+function openSmartlink(){
+
+window.open(
+ADSTERRA_SMARTLINK,
+"_blank",
+"noopener,noreferrer"
+);
+
+}
+
+
+/* ================= AGE MODAL ================= */
+
+function requestAgeConfirmation(index){
+
+pendingVideoIndex=index;
+
+ageModal.classList.add("show");
+
+}
+
+
+function closeAgeModal(){
+
+ageModal.classList.remove("show");
+
+pendingVideoIndex=null;
+
+}
+
+
+/*
+ BUTTON 1
+ SmartLink + video
+*/
+
+ageConfirm.addEventListener(
+"click",
+function(){
+
+const index=
+pendingVideoIndex;
+
+openSmartlink();
+
+closeAgeModal();
+
+if(index!==null){
+
+loadVideo(index);
+
+}
+
+}
+);
+
+
+/*
+ BUTTON 2
+ SmartLink only
+*/
+
+ageSmartlink.addEventListener(
+"click",
+function(){
+
+openSmartlink();
+
+}
+);
+
+
+ageCancel.addEventListener(
+"click",
+function(){
+
+closeAgeModal();
+
+}
+);
+
+
+/* ================= VIDEO LIST ================= */
+
+function renderVideoList(){
+
+videoListContainer.innerHTML="";
+
+VIDEO_LIST.forEach(
+function(item,index){
+
+const div=
+document.createElement("div");
+
+div.className="video-item";
+
+div.innerHTML=`
+
+<div class="video-item-icon">
+<i class="fas fa-play"></i>
+</div>
+
+<div class="video-item-info">
+
+<strong>
+${item.title}
+</strong>
+
+<span>
+Video ${index+1} of ${VIDEO_LIST.length}
+</span>
+
+</div>
+
+<div class="video-item-arrow">
+<i class="fas fa-chevron-right"></i>
+</div>
+
+`;
+
+div.addEventListener(
+"click",
+function(){
+
+requestAgeConfirmation(index);
+
+}
+);
+
+videoListContainer.appendChild(div);
+
+}
+);
+
+}
+
+
+/* ================= ACTIVE ================= */
+
+function updateActiveItem(){
+
+const items=
+document.querySelectorAll(".video-item");
+
+items.forEach(
+function(item,index){
+
+item.classList.toggle(
+"active",
+index===currentIndex
+);
+
+}
+);
+
+}
+
+
+/* ================= LOAD VIDEO ================= */
 
 function loadVideo(index){
 
@@ -799,15 +1212,25 @@ playPauseBtn.innerHTML=
 afterVideo.classList.remove("show");
 
 verificationBox.innerHTML=`
+
 <div class="title">
 PLAYBACK VERIFICATION
 </div>
+
 <div class="message">
 Please click the player above to start the video.
 </div>
+
 `;
 
 saveIndex(index);
+
+updateActiveItem();
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
 }
 
@@ -822,7 +1245,8 @@ player.style.display="block";
 
 document.body.style.background="#0b0d10";
 
-const saved=getIndex();
+const saved=
+getSavedIndex();
 
 const next=
 (saved+1)%VIDEO_LIST.length;
@@ -832,6 +1256,7 @@ loadVideo(next);
 window.scrollTo(0,0);
 
 }
+
 
 function showLanding(){
 
@@ -846,20 +1271,7 @@ video.pause();
 }
 
 
-/* ================= SMARTLINK ================= */
-
-function openSmartlink(){
-
-window.open(
-ADSTERRA_SMARTLINK,
-"_blank",
-"noopener,noreferrer"
-);
-
-}
-
-
-/* ================= CONTINUE ================= */
+/* ================= LANDING SMARTLINK ================= */
 
 btnContinue.addEventListener(
 "click",
@@ -872,8 +1284,6 @@ showPlayer();
 }
 );
 
-
-/* ================= PLAY ICON ================= */
 
 playIcon.addEventListener(
 "click",
@@ -906,9 +1316,10 @@ function nextVideo(){
 const next=
 (currentIndex+1)%VIDEO_LIST.length;
 
-loadVideo(next);
+requestAgeConfirmation(next);
 
 }
+
 
 btnNext.addEventListener(
 "click",
@@ -921,6 +1332,7 @@ nextVideo();
 }
 );
 
+
 afterNext.addEventListener(
 "click",
 function(){
@@ -931,11 +1343,12 @@ nextVideo();
 );
 
 
-/* ================= PLAY ================= */
+/* ================= PLAY / PAUSE ================= */
 
 function playVideo(){
 
-video.play().then(function(){
+video.play().then(
+function(){
 
 videoOverlay.classList.add("hidden");
 
@@ -943,19 +1356,24 @@ playPauseBtn.innerHTML=
 '<i class="fas fa-pause"></i>';
 
 verificationBox.innerHTML=`
+
 <div class="title">
 PLAYBACK ACTIVE
 </div>
+
 <div class="message">
 Video is currently playing.
 </div>
+
 `;
 
-}).catch(function(){
-
-});
+}
+).catch(
+function(){}
+);
 
 }
+
 
 function pauseVideo(){
 
@@ -968,15 +1386,21 @@ playPauseBtn.innerHTML=
 
 }
 
+
 function togglePlay(){
 
 if(video.paused){
+
 playVideo();
+
 }else{
+
 pauseVideo();
+
 }
 
 }
+
 
 playPauseBtn.addEventListener(
 "click",
@@ -989,6 +1413,7 @@ togglePlay();
 }
 );
 
+
 videoOverlay.addEventListener(
 "click",
 function(){
@@ -999,7 +1424,23 @@ playVideo();
 );
 
 
-/* ================= END ================= */
+video.addEventListener(
+"click",
+function(){
+
+if(
+videoOverlay.classList.contains("hidden")
+){
+
+togglePlay();
+
+}
+
+}
+);
+
+
+/* ================= VIDEO END ================= */
 
 video.addEventListener(
 "ended",
@@ -1035,6 +1476,7 @@ updateTime();
 }
 );
 
+
 function updateTime(){
 
 timeDisplay.textContent=
@@ -1044,13 +1486,16 @@ formatTime(video.duration);
 
 }
 
+
 function formatTime(seconds){
 
 if(
 isNaN(seconds) ||
 !isFinite(seconds)
 ){
+
 return"00:00";
+
 }
 
 const minutes=
@@ -1067,6 +1512,7 @@ String(secs).padStart(2,"0")
 
 }
 
+
 progressBar.addEventListener(
 "click",
 function(e){
@@ -1075,7 +1521,9 @@ if(
 !video.duration ||
 !isFinite(video.duration)
 ){
+
 return;
+
 }
 
 const rect=
@@ -1105,16 +1553,19 @@ updateMuteIcon();
 }
 );
 
+
 muteBtn.addEventListener(
 "click",
 function(){
 
-video.muted=!video.muted;
+video.muted=
+!video.muted;
 
 updateMuteIcon();
 
 }
 );
+
 
 function updateMuteIcon(){
 
@@ -1126,7 +1577,9 @@ video.volume===0
 muteBtn.innerHTML=
 '<i class="fas fa-volume-mute"></i>';
 
-}else if(video.volume<0.5){
+}else if(
+video.volume<.5
+){
 
 muteBtn.innerHTML=
 '<i class="fas fa-volume-down"></i>';
@@ -1146,6 +1599,8 @@ muteBtn.innerHTML=
 video.volume=.8;
 
 volumeSlider.value=.8;
+
+renderVideoList();
 
 showLanding();
 
