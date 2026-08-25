@@ -1,13 +1,10 @@
 <!doctype html>
 <html lang="id">
 <head>
-
-<script src="https://conductivebreeds.com/ae/cc/ba/aeccba7b93bc9966e16b7d7e35e1e9a6.js"></script>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title></title>
+<title>V Video</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,120 +12,142 @@
 
 <style>
 :root{
---bg:#ffffff;
---text:#0f172a;
---muted:#64748b;
---line:#e2e8f0;
---btn:#111827;
---btnText:#ffffff;
---btnHover:#000000;
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --dark:#111827;
+  --blue:#2563eb;
 }
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 html{
--webkit-text-size-adjust:100%;
-}
-
-html,body{
-height:100%;
+  -webkit-text-size-adjust:100%;
 }
 
 body{
-font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
-background:var(--bg);
-color:var(--text);
-overflow-x:hidden;
+  min-height:100vh;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
 }
 
 .appbar{
-position:sticky;
-top:0;
-z-index:20;
-background:#fff;
-border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#fff;
+  border-bottom:1px solid var(--line);
 }
 
 .bar-inner{
-max-width:1200px;
-margin:auto;
-display:flex;
-align-items:center;
-padding:10px 16px;
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  padding:10px 16px;
 }
 
 .brand{
-display:flex;
-align-items:center;
-gap:8px;
-font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-weight:700;
 }
 
 .logo{
-width:28px;
-height:28px;
-display:grid;
-place-items:center;
-background:#111827;
-color:#fff;
-border-radius:6px;
+  width:30px;
+  height:30px;
+  display:grid;
+  place-items:center;
+  background:var(--dark);
+  color:#fff;
+  border-radius:7px;
 }
 
 .spacer{
-flex:1;
-}
-
-.btn{
-border:0;
-padding:10px 14px;
-border-radius:12px;
-background:#111827;
-color:#fff;
-font-weight:600;
-cursor:pointer;
+  flex:1;
 }
 
 .banner{
-max-width:1200px;
-margin:10px auto;
-padding:8px 16px;
-color:#64748b;
+  max-width:900px;
+  margin:10px auto 0;
+  padding:8px 16px;
+  color:var(--muted);
+  font-size:12px;
 }
 
 .wrap{
-max-width:1200px;
-margin:auto;
-padding:16px;
+  max-width:900px;
+  margin:auto;
+  padding:16px;
 }
 
 .player-shell{
-display:grid;
-place-items:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 .phone{
-width:clamp(240px,92vw,420px);
-aspect-ratio:9/16;
-border-radius:22px;
-overflow:hidden;
-background:#000;
+  width:clamp(240px,92vw,420px);
+  aspect-ratio:9/16;
+  border-radius:22px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 8px 30px rgba(0,0,0,.12);
 }
 
 .phone video{
-width:100%;
-height:100%;
-object-fit:cover;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.direct-btn{
+  width:clamp(240px,92vw,420px);
+  margin-top:16px;
+  padding:15px 18px;
+  border:0;
+  border-radius:14px;
+  background:var(--blue);
+  color:#fff;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform .12s ease,opacity .12s ease;
+}
+
+.direct-btn:active{
+  transform:scale(.98);
+}
+
+.direct-btn:disabled{
+  opacity:.65;
+  cursor:default;
+}
+
+.hint{
+  width:clamp(240px,92vw,420px);
+  margin-top:9px;
+  text-align:center;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.5;
 }
 
 .meta{
-margin-top:20px;
-text-align:center;
-color:#64748b;
-font-size:13px;
+  margin-top:12px;
+  color:var(--muted);
+  font-size:13px;
+  text-align:center;
 }
 </style>
 </head>
@@ -136,79 +155,124 @@ font-size:13px;
 <body>
 
 <header class="appbar">
-<div class="bar-inner">
+  <div class="bar-inner">
+    <div class="brand">
+      <span class="logo">V</span>
+      <span>vjdey<span style="color:#3b82f6">.co</span></span>
+    </div>
 
-<div class="brand">
-<span class="logo">V</span>
-<span>vjdey<span style="color:#3b82f6">.co</span></span>
-</div>
-
-<div class="spacer"></div>
-
-<button class="btn">Upload</button>
-
-</div>
+    <div class="spacer"></div>
+  </div>
 </header>
 
 <div class="banner">
-Advertise
+  Advertise
 </div>
 
 <main class="wrap">
-<section class="player-shell">
+  <section class="player-shell">
 
-<div class="phone">
+    <div class="phone">
+      <video
+        id="video"
+        playsinline
+        controls
+        preload="metadata">
+        <source
+          src="https://cdn2.videy.co/VUQ3U8JN1.mp4"
+          type="video/mp4">
+        Browser Anda tidak mendukung video.
+      </video>
+    </div>
 
-<video id="video" playsinline controls>
-<source src="https://cdn2.videy.co/VUQ3U8JN1.mp4" type="video/mp4">
+    <button
+      id="directBtn"
+      class="direct-btn"
+      type="button">
+      Lanjutkan
+    </button>
 
-</video>
+    <div class="hint">
+      Tekan tombol di atas untuk melanjutkan.
+    </div>
 
-</div>
+    <div id="meta" class="meta">
+      0:00 / --:--
+    </div>
 
-<div class="meta">
-0:00 / 3:57 • Putar untuk memulai
-</div>
-
-</section>
+  </section>
 </main>
 
 <script>
-const v = document.getElementById('video');
-const meta = document.querySelector('.meta');
+(function(){
 
-function fmt(t){
-  const m = Math.floor(t/60);
-  const s = Math.floor(t%60).toString().padStart(2,'0');
-  return `${m}:${s}`;
-}
+  const video = document.getElementById("video");
+  const meta = document.getElementById("meta");
 
-v.addEventListener('loadedmetadata', ()=>{
-  meta.textContent = `0:00 / ${fmt(v.duration)}`;
-});
+  function formatTime(seconds){
+    if(!Number.isFinite(seconds)){
+      return "0:00";
+    }
 
-v.addEventListener('timeupdate', ()=>{
-  meta.textContent = `${fmt(v.currentTime)} / ${fmt(v.duration)}`;
-});
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60)
+      .toString()
+      .padStart(2,"0");
+
+    return minutes + ":" + secs;
+  }
+
+  video.addEventListener("loadedmetadata", function(){
+    meta.textContent =
+      "0:00 / " + formatTime(video.duration);
+  });
+
+  video.addEventListener("timeupdate", function(){
+    meta.textContent =
+      formatTime(video.currentTime) +
+      " / " +
+      formatTime(video.duration);
+  });
+
+})();
 </script>
 
 <script>
-var LINK_ID  = "https://conductivebreeds.com/ivhgr2by9x?key=d5887de29582e2ed00a34f4151b7b74a";
-var LINK_ALL = "https://conductivebreeds.com/ivhgr2by9x?key=d5887de29582e2ed00a34f4151b7b74a";
-var DELAY = 15000;
+(function(){
 
-function geoip(g){
-  setTimeout(function(){
-    if(g && g.country === "ID"){
-      window.top.location.href = LINK_ID;
-    }else{
-      window.top.location.href = LINK_ALL;
+  const DIRECT_LINK =
+    "https://omg10.com/4/11649845";
+
+  const button =
+    document.getElementById("directBtn");
+
+  let opened = false;
+
+  button.addEventListener("click", function(){
+
+    if(opened){
+      return;
     }
-  }, DELAY);
-}
-</script>
 
-<script src="https://get.geojs.io/v1/ip/country.js?callback=geoip"></script>
+    opened = true;
+    button.disabled = true;
+    button.textContent = "Membuka...";
+
+    window.open(
+      DIRECT_LINK,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+    setTimeout(function(){
+      button.disabled = false;
+      button.textContent = "Lanjutkan";
+    }, 3000);
+
+  });
+
+})();
+</script>
 
 </body>
 </html>
