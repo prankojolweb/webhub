@@ -2,26 +2,22 @@
 <html lang="id">
 <head>
 
-<script>(function(s){s.dataset.zone='11855799',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>Dramachina</title>
+<title>IndoV1ral</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
 --bg:#ffffff;
 --text:#0f172a;
 --muted:#64748b;
 --line:#e2e8f0;
---btn:#111827;
---btnText:#ffffff;
---btnHover:#000000;
 }
 
 *{
@@ -30,20 +26,19 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
--webkit-text-size-adjust:100%;
-}
-
 html,body{
 height:100%;
 }
 
 body{
-font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
+font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif;
 background:var(--bg);
 color:var(--text);
 overflow-x:hidden;
 }
+
+
+/* HEADER */
 
 .appbar{
 position:sticky;
@@ -92,12 +87,18 @@ font-weight:600;
 cursor:pointer;
 }
 
+
+/* BANNER */
+
 .banner{
 max-width:1200px;
 margin:10px auto;
 padding:8px 16px;
 color:#64748b;
 }
+
+
+/* CONTENT */
 
 .wrap{
 max-width:1200px;
@@ -110,7 +111,11 @@ display:grid;
 place-items:center;
 }
 
+
+/* VIDEO */
+
 .phone{
+position:relative;
 width:clamp(240px,92vw,420px);
 aspect-ratio:9/16;
 border-radius:22px;
@@ -124,91 +129,674 @@ height:100%;
 object-fit:cover;
 }
 
+
+/* PLAY BUTTON */
+
+.play-button{
+position:absolute;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+
+width:72px;
+height:72px;
+
+border-radius:50%;
+border:0;
+
+background:rgba(255,255,255,.95);
+color:#111827;
+
+font-size:30px;
+
+display:grid;
+place-items:center;
+
+z-index:5;
+cursor:pointer;
+
+box-shadow:0 8px 30px rgba(0,0,0,.35);
+}
+
+.play-button:hover{
+transform:translate(-50%,-50%) scale(1.06);
+}
+
+
+/* TELEGRAM */
+
+.telegram{
+margin-top:18px;
+width:clamp(240px,92vw,420px);
+}
+
+.telegram a{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
+width:100%;
+
+padding:13px 18px;
+
+border-radius:12px;
+
+background:#229ED9;
+color:#fff;
+
+text-decoration:none;
+
+font-size:15px;
+font-weight:700;
+
+box-shadow:0 5px 15px rgba(34,158,217,.25);
+
+transition:.2s;
+}
+
+.telegram a:hover{
+transform:translateY(-1px);
+}
+
+.telegram-icon{
+width:27px;
+height:27px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#fff;
+border-radius:50%;
+
+color:#229ED9;
+
+font-size:15px;
+font-weight:900;
+}
+
+
+/* VIDEO INFO */
+
 .meta{
-margin-top:20px;
+margin-top:16px;
 text-align:center;
 color:#64748b;
 font-size:13px;
 }
+
+
+/* =========================================
+   POPUP USIA
+   ========================================= */
+
+.age-overlay{
+display:none;
+
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,.78);
+
+z-index:9999;
+
+align-items:center;
+justify-content:center;
+
+padding:20px;
+}
+
+.age-box{
+width:100%;
+max-width:380px;
+
+background:#fff;
+
+border-radius:18px;
+
+padding:25px 20px;
+
+text-align:center;
+
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.age-icon{
+width:58px;
+height:58px;
+
+margin:0 auto 14px;
+
+border-radius:50%;
+
+background:#111827;
+color:#fff;
+
+display:grid;
+place-items:center;
+
+font-size:20px;
+font-weight:800;
+}
+
+.age-box h2{
+font-size:21px;
+margin-bottom:10px;
+color:#111827;
+}
+
+.age-box p{
+font-size:14px;
+line-height:1.6;
+color:#64748b;
+margin-bottom:20px;
+}
+
+.age-buttons{
+display:flex;
+gap:10px;
+}
+
+.age-buttons button{
+flex:1;
+
+border:0;
+
+padding:13px 10px;
+
+border-radius:11px;
+
+font-weight:700;
+
+cursor:pointer;
+}
+
+.btn-lanjut{
+background:#111827;
+color:#fff;
+}
+
+.btn-batal{
+background:#e5e7eb;
+color:#111827;
+}
+
+.countdown{
+margin-top:12px;
+font-size:12px;
+color:#94a3b8;
+}
+
 </style>
+
 </head>
 
 <body>
 
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
 <header class="appbar">
+
 <div class="bar-inner">
 
 <div class="brand">
-<span class="logo">DC</span>
-<span>DRAMACHINA<span style="color:#3b82f6">.co</span></span>
+
+<span class="logo">
+V
+</span>
+
+<span>
+vldey<span style="color:#3b82f6">.co</span>
+</span>
+
 </div>
 
 <div class="spacer"></div>
 
-<button class="btn">Upload</button>
+<button class="btn">
+Upload
+</button>
 
 </div>
+
 </header>
+
 
 <div class="banner">
 Advertise
 </div>
 
+
+<!-- =========================================
+     MAIN
+     ========================================= -->
+
 <main class="wrap">
+
 <section class="player-shell">
+
+
+<!-- VIDEO -->
 
 <div class="phone">
 
-<video id="video" playsinline controls>
-<source src="https://cdn2.videy.co/vuH0IlsL1.mp4" type="video/mp4">
+<video
+id="video"
+playsinline
+controls
+preload="metadata">
+
+<source
+src="https://cdn2.videy.co/v0xFkhm61.mp4"
+type="video/mp4">
+
+Browser Anda tidak mendukung video.
 
 </video>
 
+
+<!-- PLAY -->
+
+<button
+class="play-button"
+id="playButton"
+aria-label="Play">
+
+▶
+
+</button>
+
 </div>
 
-<div class="meta">
-0:00 / 3:57 • Putar untuk memulai
+
+<!-- =========================================
+     TELEGRAM
+     ========================================= -->
+
+<div class="telegram">
+
+<a
+href="https://t.me/AsupanVideyXyz"
+target="_blank"
+rel="noopener noreferrer">
+
+<span class="telegram-icon">
+➤
+</span>
+
+<span>
+Gabung Channel Telegram
+</span>
+
+</a>
+
 </div>
+
+
+<!-- VIDEO INFO -->
+
+<div
+class="meta"
+id="meta">
+
+0:00 / 3:57 • Putar untuk memulai
+
+</div>
+
 
 </section>
+
 </main>
 
+
+<!-- =========================================
+     POPUP 18+
+     ========================================= -->
+
+<div
+class="age-overlay"
+id="ageOverlay">
+
+<div class="age-box">
+
+<div class="age-icon">
+18+
+</div>
+
+<h2>
+Konfirmasi Usia
+</h2>
+
+<p>
+
+Konten ini diperuntukkan bagi
+pengguna berusia 18 tahun ke atas.
+
+<br><br>
+
+Apakah Anda ingin melanjutkan menonton?
+
+</p>
+
+
+<div class="age-buttons">
+
+<button
+class="btn-batal"
+id="btnBatal">
+
+BATAL
+
+</button>
+
+
+<button
+class="btn-lanjut"
+id="btnLanjut">
+
+LANJUT
+
+</button>
+
+</div>
+
+
+<div class="countdown">
+
+Video dijeda pada 00:30
+
+</div>
+
+</div>
+
+</div>
+
+
+
 <script>
-const v = document.getElementById('video');
-const meta = document.querySelector('.meta');
+
+/* =========================================
+   DIRECT LINK IKLAN
+   ========================================= */
+
+const DIRECT_LINK =
+"https://uplcm.com/4/11490308";
+
+
+/* =========================================
+   ELEMENT
+   ========================================= */
+
+const video =
+document.getElementById("video");
+
+const meta =
+document.getElementById("meta");
+
+const playButton =
+document.getElementById("playButton");
+
+const ageOverlay =
+document.getElementById("ageOverlay");
+
+const btnLanjut =
+document.getElementById("btnLanjut");
+
+const btnBatal =
+document.getElementById("btnBatal");
+
+
+/* =========================================
+   SETTING
+   ========================================= */
+
+const AGE_TIME = 30;
+
+let ageShown = false;
+
+let savedTime = 0;
+
+let actionAfterReturn = "";
+
+
+/* =========================================
+   FORMAT WAKTU
+   ========================================= */
 
 function fmt(t){
-  const m = Math.floor(t/60);
-  const s = Math.floor(t%60).toString().padStart(2,'0');
-  return `${m}:${s}`;
+
+if(!isFinite(t)){
+return "0:00";
 }
 
-v.addEventListener('loadedmetadata', ()=>{
-  meta.textContent = `0:00 / ${fmt(v.duration)}`;
-});
+const m =
+Math.floor(t / 60);
 
-v.addEventListener('timeupdate', ()=>{
-  meta.textContent = `${fmt(v.currentTime)} / ${fmt(v.duration)}`;
-});
-</script>
+const s =
+Math.floor(t % 60)
+.toString()
+.padStart(2,"0");
 
-<script>
-var LINK_ID  = "https://omg10.com/4/11855801";
-var LINK_ALL = "https://omg10.com/4/11855801";
-var DELAY = 15000;
+return `${m}:${s}`;
 
-function geoip(g){
-  setTimeout(function(){
-    if(g && g.country === "ID"){
-      window.top.location.href = LINK_ID;
-    }else{
-      window.top.location.href = LINK_ALL;
-    }
-  }, DELAY);
 }
-</script>
 
-<script src="https://get.geojs.io/v1/ip/country.js?callback=geoip"></script>
+
+/* =========================================
+   PLAY BUTTON
+   ========================================= */
+
+playButton.addEventListener("click",function(e){
+
+e.stopPropagation();
+
+window.location.href =
+DIRECT_LINK;
+
+});
+
+
+/* =========================================
+   VIDEO TIME
+   ========================================= */
+
+video.addEventListener("timeupdate",function(){
+
+meta.textContent =
+`${fmt(video.currentTime)} / ${fmt(video.duration)}`;
+
+
+/* Popup tepat sekitar detik 30 */
+
+if(
+video.currentTime >= AGE_TIME &&
+!ageShown
+){
+
+ageShown = true;
+
+savedTime =
+video.currentTime;
+
+
+/* Pause */
+
+video.pause();
+
+
+/* Popup */
+
+ageOverlay.style.display =
+"flex";
+
+}
+
+});
+
+
+/* =========================================
+   LANJUT
+   ========================================= */
+
+btnLanjut.addEventListener("click",function(){
+
+savedTime =
+video.currentTime;
+
+
+/*
+Setelah kembali:
+video lanjut
+*/
+
+actionAfterReturn =
+"lanjut";
+
+
+/*
+Buka Direct Link
+*/
+
+window.location.href =
+DIRECT_LINK;
+
+});
+
+
+/* =========================================
+   BATAL
+   ========================================= */
+
+btnBatal.addEventListener("click",function(){
+
+savedTime =
+video.currentTime;
+
+
+/*
+Setelah kembali:
+video tetap pause
+*/
+
+actionAfterReturn =
+"batal";
+
+
+/*
+Buka Direct Link
+*/
+
+window.location.href =
+DIRECT_LINK;
+
+});
+
+
+/* =========================================
+   KETIKA USER KEMBALI
+   ========================================= */
+
+window.addEventListener("pageshow",function(){
+
+if(
+actionAfterReturn === "lanjut"
+){
+
+ageOverlay.style.display =
+"none";
+
+
+video.currentTime =
+savedTime;
+
+
+setTimeout(function(){
+
+video.play()
+.catch(function(){});
+
+},300);
+
+
+actionAfterReturn =
+"";
+
+}
+
+
+if(
+actionAfterReturn === "batal"
+){
+
+ageOverlay.style.display =
+"none";
+
+
+video.currentTime =
+savedTime;
+
+
+/*
+Tetap pause
+*/
+
+video.pause();
+
+
+actionAfterReturn =
+"";
+
+}
+
+});
+
+
+/* =========================================
+   VIDEO LOADED
+   ========================================= */
+
+video.addEventListener(
+"loadedmetadata",
+function(){
+
+meta.textContent =
+`0:00 / ${fmt(video.duration)} • Putar untuk memulai`;
+
+});
+
+
+/* =========================================
+   VIDEO PLAY
+   ========================================= */
+
+video.addEventListener("play",function(){
+
+playButton.style.display =
+"none";
+
+});
+
+
+/* =========================================
+   VIDEO PAUSE
+   ========================================= */
+
+video.addEventListener("pause",function(){
+
+if(video.currentTime < 1){
+
+playButton.style.display =
+"grid";
+
+}
+
+});
+
+</script>
 
 </body>
 </html>
