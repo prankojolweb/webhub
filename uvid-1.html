@@ -440,24 +440,25 @@ img {
 const SITE_NAME = "MY COLLECTIONS";
 const PLAYLIST_NAME = "Playlist Pilihan";
 
-/* DIRECT LINK ADSTERRA */
+/* DIRECT LINK BARU */
 const DIRECT_LINK = "https://uplcm.com/4/11962718";
 
 /* POPUNDER BARU */
 const POPUNDER_SRC = "https://al5sm.com/tag.min.js";
 const POPUNDER_ZONE = "11962701";
+
 /* DAFTAR VIDEO */
 const VIDEOS = [
-  {title:"Video Viral 71",thumb:"",src:"https://cdn2.videy.co/jCZCoCR71.mp4"},
-  {title:"Video Viral 72",thumb:"",src:"https://cdn2.videy.co/aTPSKV5h1.mp4"},
-  {title:"Video Viral 73",thumb:"",src:"https://cdn2.videy.co/okepGXdP1.mp4"},
-  {title:"Video Viral 74",thumb:"",src:"https://cdn2.videy.co/YxPWooRB1.mp4"},
-  {title:"Video Viral 75",thumb:"",src:"https://cdn2.videy.co/cX7TCNTM1.mp4"},
-  {title:"Video Viral 76",thumb:"",src:"https://cdn2.videy.co/Qp7SNJlZ1.mp4"},
-  {title:"Video Viral 77",thumb:"",src:"https://cdn2.videy.co/935MXSwd1.mp4"},
-  {title:"Video Viral 78",thumb:"",src:"https://cdn2.videy.co/MyhyXbQG1.mp4"},
-  {title:"Video Viral 79",thumb:"",src:"https://cdn2.videy.co/pcJBfrRs1.mp4"},
-  {title:"Video Viral 80",thumb:"",src:"https://cdn2.videy.co/S2z7A71N1.mp4"}
+  {title:"Video Viral 71",thumb:"",src:"VID"},
+  {title:"Video Viral 72",thumb:"",src:""},
+  {title:"Video Viral 73",thumb:"",src:""},
+  {title:"Video Viral 74",thumb:"",src:""},
+  {title:"Video Viral 75",thumb:"",src:""},
+  {title:"Video Viral 76",thumb:"",src:""},
+  {title:"Video Viral 77",thumb:"",src:""},
+  {title:"Video Viral 78",thumb:"",src:""},
+  {title:"Video Viral 79",thumb:"",src:""},
+  {title:"Video Viral 80",thumb:"",src:""}
 ];
 
 const THUMB_SECOND = 1;
@@ -521,7 +522,7 @@ function loadPageAds() {
   popunderLoaded = true;
 
   const script = document.createElement("script");
-  script.dataset.cfasync = "false";
+  script.dataset.zone = POPUNDER_ZONE;
   script.src = POPUNDER_SRC;
   script.async = true;
 
@@ -685,36 +686,19 @@ window.addEventListener("hashchange", route);
 route();
 </script>
 
-<!-- HISTATS: TETAP -->
-<div id="histats_counter"></div>
-<script type="text/javascript">
-var _Hasync = _Hasync || [];
-
-_Hasync.push([
-  "Histats.start",
-  "1,5051765,4,511,95,18,00000000"
-]);
-
-_Hasync.push(["Histats.fasi", "1"]);
-_Hasync.push(["Histats.track_hits", ""]);
-
+ <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5051765,4,511,95,18,00000000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
 (function() {
-  var hs = document.createElement("script");
-  hs.type = "text/javascript";
-  hs.async = true;
-  hs.src = "//s10.histats.com/js15_as.js";
-
-  (document.head || document.body).appendChild(hs);
-})();
-</script>
-
-<noscript>
-  <a href="/" target="_blank" rel="noopener">
-    <img src="//sstatic1.histats.com/0.gif?5051765&101"
-      alt="" border="0">
-  </a>
-</noscript>
-<!-- HISTATS END -->
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5051765&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
 
 </body>
 </html>
