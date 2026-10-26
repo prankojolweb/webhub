@@ -88,7 +88,6 @@ img{max-width:100%;display:block}
     <div class="grid" id="grid"></div>
   </main>
 
-  <!-- TOMBOL CHANNEL TELEGRAM -->
   <div style="text-align:center;padding:0 16px 24px;">
     <a href="https://t.me/mediaviralweb"
        target="_blank"
@@ -147,24 +146,24 @@ img{max-width:100%;display:block}
 const SITE_NAME = "MY COLLECTIONS";
 const PLAYLIST_NAME = "Playlist Pilihan";
 
-/* DIRECT LINK ADSTERRA */
+/* SMARTLINK BARU */
 const DIRECT_LINK = "https://lectureheard.com/ktcpiewrfu?key=6db9b70b97764a79dee0f2f453dd5ba3";
 
-/* POPUNDER ADSTERRA */
+/* POPUNDER BARU */
 const POPUNDER_SRC = "https://lectureheard.com/90/a1/13/90a113ec0aca1844856713c7f08a708b.js";
 
 /* DAFTAR VIDEO */
 const VIDEOS = [
-  {title:"Video Viral 1",thumb:"",src:"https://cdn2.videy.co/8P80kxgb1.mp4"},
-  {title:"Video Viral 2",thumb:"",src:"https://cdn2.videy.co/uCJhAh5Z1.mp4"},
-  {title:"Video Viral 3",thumb:"",src:"https://cdn2.videy.co/M3513WFJ1.mp4"},
-  {title:"Video Viral 4",thumb:"",src:"https://cdn2.videy.co/LusvRm4V1.mp4"},
-  {title:"Video Viral 5",thumb:"",src:"https://cdn2.videy.co/trwQF1bS1.mp4"},
-  {title:"Video Viral 6",thumb:"",src:"https://cdn2.videy.co/5FukW57z1.mp4"},
-  {title:"Video Viral 7",thumb:"",src:"https://cdn2.videy.co/CI6zvu9t1.mp4"},
-  {title:"Video Viral 8",thumb:"",src:"https://cdn2.videy.co/nGtfCO2T1.mp4"},
-  {title:"Video Viral 9",thumb:"",src:"https://cdn2.videy.co/dGEWRi1r1.mp4"},
-  {title:"Video Viral 10",thumb:"",src:"https://cdn2.videy.co/O4asT5Bm1.mp4"}
+  {title:"Video Viral 1",thumb:"",src:"https://cdn2.slicedrive.com/efF5Cr3X1.mp4"},
+  {title:"Video Viral 2",thumb:"",src:"https://cdn2.slicedrive.com/Z0xm2MJC1.mp4"},
+  {title:"Video Viral 3",thumb:"",src:"https://cdn2.slicedrive.com/mlCoZ06H1.mp4"},
+  {title:"Video Viral 4",thumb:"",src:"https://cdn2.slicedrive.com/novJeIza1.mp4"},
+  {title:"Video Viral 5",thumb:"",src:"https://cdn2.slicedrive.com/HJNF895M1.mp4"},
+  {title:"Video Viral 6",thumb:"",src:"https://cdn2.slicedrive.com/ORcyQNdR1.mp4"},
+  {title:"Video Viral 7",thumb:"",src:"https://cdn2.slicedrive.com/SfijfI301.mp4"},
+  {title:"Video Viral 8",thumb:"",src:"https://cdn2.slicedrive.com/bBEQO9a41.mp4"},
+  {title:"Video Viral 9",thumb:"",src:"https://cdn2.slicedrive.com/sydibd9a1.mp4"},
+  {title:"Video Viral 10",thumb:"",src:"https://cdn2.slicedrive.com/Oq3D5Y8I1.mp4"}
 ];
 
 const THUMB_SECOND = 1;
@@ -179,7 +178,6 @@ $("brand1").textContent = SITE_NAME;
 $("brand2").textContent = SITE_NAME;
 document.title = SITE_NAME;
 
-/* THUMBNAIL GALERI */
 function thumbHTML(video) {
   if (video.thumb) {
     return `<img src="${video.thumb}" alt="" loading="lazy">`;
@@ -198,7 +196,6 @@ function thumbHTML(video) {
   `;
 }
 
-/* TAMPILKAN GALERI */
 function renderGrid() {
   $("grid").innerHTML = VIDEOS.map((video, index) => `
     <button class="card ${index === current ? "active" : ""}" data-i="${index}">
@@ -208,7 +205,7 @@ function renderGrid() {
   `).join("");
 }
 
-/* DIRECT LINK SAAT KLIK VIDEO */
+/* SMARTLINK SAAT KARTU VIDEO DIKLIK */
 $("grid").addEventListener("click", event => {
   const card = event.target.closest(".card");
   if (!card) return;
@@ -216,7 +213,7 @@ $("grid").addEventListener("click", event => {
   const index = Number(card.dataset.i);
   if (!Number.isInteger(index) || !VIDEOS[index]) return;
 
-  window.open(DIRECT_LINK, "_blank");
+  window.open(DIRECT_LINK, "_blank", "noopener,noreferrer");
 
   location.hash = "video=" + index;
 });
@@ -238,7 +235,6 @@ function loadPageAds() {
   document.body.appendChild(script);
 }
 
-/* TAMPILKAN HALAMAN VIDEO */
 function renderWatch(index) {
   current = index;
   const video = VIDEOS[index];
@@ -278,7 +274,6 @@ function renderWatch(index) {
     PLAYLIST_NAME.charAt(0).toUpperCase();
 }
 
-/* PUTAR VIDEO */
 $("playBtn").addEventListener("click", () => {
   const video = VIDEOS[current];
 
@@ -313,7 +308,6 @@ $("playBtn").addEventListener("click", () => {
   }
 });
 
-/* PENCARIAN VIDEO */
 $("search").addEventListener("keydown", event => {
   if (event.key !== "Enter") return;
 
@@ -332,12 +326,10 @@ $("search").addEventListener("keydown", event => {
   }
 });
 
-/* KEMBALI KE GALERI */
 $("backBtn").addEventListener("click", () => {
   location.hash = "";
 });
 
-/* HENTIKAN PEMUTARAN */
 function stopCurrentVideo() {
   const playerVideo = $("player").querySelector(".main-video");
 
@@ -354,7 +346,6 @@ function stopCurrentVideo() {
   $("playBtn").classList.remove("hidden");
 }
 
-/* NAVIGASI HALAMAN */
 function route() {
   const hash = location.hash;
   const match = hash.match(/^#video=(\d+)$/);
@@ -391,19 +382,27 @@ window.addEventListener("hashchange", route);
 route();
 </script>
 
- <!-- Histats.com  (div with counter) --><div id="histats_counter"></div>
-<!-- Histats.com  START  (aync)-->
-<script type="text/javascript">var _Hasync= _Hasync|| [];
+<!-- HISTATS COUNTER -->
+<div id="histats_counter"></div>
+<script type="text/javascript">
+var _Hasync = _Hasync || [];
 _Hasync.push(['Histats.start', '1,5058968,4,511,95,18,00000000']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
 (function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5058968&101" alt="" border="0"></a></noscript>
-<!-- Histats.com  END  -->
+  var hs = document.createElement('script');
+  hs.type = 'text/javascript';
+  hs.async = true;
+  hs.src = '//s10.histats.com/js15_as.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();
+</script>
+<noscript>
+  <a href="/" target="_blank">
+    <img src="//sstatic1.histats.com/0.gif?5058968&101" alt="" border="0">
+  </a>
+</noscript>
+<!-- HISTATS END -->
 
 </body>
 </html>
